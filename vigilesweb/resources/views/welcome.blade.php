@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    RICCARDO è STATO QUI
+                    RICCARDO è STATO QUI. Anche Sara 
                 </div>
 
                 <div class="links">
