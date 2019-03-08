@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    RICCARDO è STATO QUI. Anche Sara, ora anche Claudia (quella vera)
+                    RICCARDO è STATO QUI. Anche Sara, ora anche Claudia (quella vera) e anche vale:)
                 </div>
 
                 <div class="links">
