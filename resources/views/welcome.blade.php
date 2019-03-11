@@ -82,6 +82,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     RICCARDO è STATO QUI. Anche Sara, ora anche Claudia (quella vera) e anche vale:)
+                    <p>DIO PORCO CI SIAMO TUTTI (Ale)</p>
                 </div>
 
                 <div class="links">
