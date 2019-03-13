@@ -1,13 +1,4 @@
-@extends('layouts.app')
-
-@section('title', 'Page Title')
-
-@section('navbar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
-@endsection
-
-@section('content')
-    <p>This is my body content.</p>
-@endsection
+@section('home')
+<h3>HOMEPAGE</h3>
+<p>Questa è la home page del nostro sito</p>
+@show

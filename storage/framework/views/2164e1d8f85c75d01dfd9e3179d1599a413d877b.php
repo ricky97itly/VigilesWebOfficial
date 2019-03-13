@@ -7,8 +7,8 @@
 </head>
 <body>
   <?php $__env->startSection('navbar'); ?>
-  <nav class="navbar navbar-expand-lg navbar-light bg-vigiles">
-    <a class="navbar-brand ml-auto" href="#"><img id="navLogo" src="<?php echo e(asset('/img/White0.5x.png')); ?>" alt="Vigiles White Logo"></a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-vigiles">
+    <a class="navbar-brand ml-auto" href="#"><img id="navLogo" src="<?php echo e(asset('/img/WhiteSmall.png')); ?>" alt="Vigiles White Logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
