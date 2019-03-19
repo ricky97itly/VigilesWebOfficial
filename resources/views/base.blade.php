@@ -6,7 +6,7 @@
   </head>
   <body>
     @include('inc.navbar')
+    @yield('content')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
-    @include('home')
   </body>
 </html>

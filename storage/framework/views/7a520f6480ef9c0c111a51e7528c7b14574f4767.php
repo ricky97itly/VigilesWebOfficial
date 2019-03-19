@@ -1,5 +1,8 @@
 <?php /* /Users/masterp/Desktop/VIGILESWEB/resources/views/home.blade.php */ ?>
-<?php $__env->startSection('home'); ?>
-<h3>HOMEPAGE</h3>
+<!--  -->
+<?php $__env->startSection('content'); ?>
+<h3>PORCODDIO</h3>
 <p>Questa è la home page del nostro sito</p>
-<?php echo $__env->yieldSection(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('base', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
