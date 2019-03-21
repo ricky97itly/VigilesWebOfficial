@@ -1,4 +1,3 @@
-<?php /* /Users/masterp/Desktop/VIGILESWEB/resources/views/layouts/app.blade.php */ ?>
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
   <head>
@@ -7,9 +6,9 @@
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
-    <?php echo $__env->make('inc.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    @include('inc.navbar')
     <div class="container mt-4">
-      <?php echo $__env->yieldContent('content'); ?>
+      @yield('content')
     </div>
 
     <footer id="footer" class="text-center text-light">

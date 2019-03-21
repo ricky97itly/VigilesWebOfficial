@@ -18,3 +18,11 @@ Route::get('/', function () {
 Route::get('/notifiche', function () {
     return view('notifiche');
 });
+
+Route::get('/segnalazioni', function () {
+    return view('segnalazioni');
+});
+
+Route::get('/cerca', function () {
+    return view('cerca');
+});
