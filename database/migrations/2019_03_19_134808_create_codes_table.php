@@ -14,7 +14,11 @@ class CreateCodesTable extends Migration
     public function up()
     {
         Schema::create('codes', function (Blueprint $table) {
+            // Chiave primaria
             $table->bigIncrements('id');
+            $table->primary('id');
+            // Altri campi
+            $table->string('color', 10);
             $table->timestamps();
         });
     }

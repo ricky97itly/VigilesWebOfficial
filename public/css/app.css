@@ -10655,18 +10655,23 @@ a.text-dark:focus {
   }
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.btn-vigiles-rounded {
+  border-radius: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 #navLogo {
-  width: 30%;
-  height: 30%;
+  width: 50%;
+  height: 50%;
 }
 
 #footer,
-.bg-vigiles {
+.bg-vigiles,
+.btn-vigiles,
+.btn-vigiles-rounded {
   background-color: #ff4c4c;
 }
 

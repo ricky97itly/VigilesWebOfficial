@@ -14,10 +14,18 @@ class CreateOperatorsTable extends Migration
     public function up()
     {
         Schema::create('operators', function (Blueprint $table) {
+            // Chiave primaria
             $table->bigIncrements('id');
+            $table->primary('id');
+            // Altri campi
+            $table->string('name', 30);
+            $table->string('surname', 30);
+            $table->string('email')->unique();
+            $table->string('password', 30);
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

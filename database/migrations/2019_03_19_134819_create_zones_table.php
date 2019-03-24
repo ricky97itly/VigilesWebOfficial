@@ -14,7 +14,11 @@ class CreateZonesTable extends Migration
     public function up()
     {
         Schema::create('zones', function (Blueprint $table) {
+            // Chiave primaria
             $table->bigIncrements('id');
+            $table->primary('id');
+            // Altri campi
+            $table->string('zone', 30);
             $table->timestamps();
         });
     }

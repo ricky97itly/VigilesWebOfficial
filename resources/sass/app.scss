@@ -9,22 +9,10 @@
 @import '~bootstrap/scss/bootstrap';
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// Custom style
+@import 'custom';
 
-#navLogo {
-  width: 30%;
-  height: 30%;
-}
-
-#footer, .bg-vigiles {
-  background-color: #ff4c4c;
-}
-
-#footer {
-  margin-top: 20px;
-  padding-top: 17px;
-  padding-bottom: 5px;
-}
+// .navbar-laravel {
+//   background-color: #fff;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// }

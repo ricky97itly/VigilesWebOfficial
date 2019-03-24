@@ -16,13 +16,13 @@ Route::get('/', function () {
 });
 
 Route::get('/notifiche', function () {
-    return view('notifiche');
+    return view('notifications');
 });
 
 Route::get('/segnalazioni', function () {
-    return view('segnalazioni');
+    return view('reports');
 });
 
 Route::get('/cerca', function () {
-    return view('cerca');
+    return view('search');
 });
