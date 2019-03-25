@@ -16,7 +16,6 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             // Chiave primaria
             $table->bigIncrements('id');
-            $table->primary('id');
             // Altri campi
             $table->string('name', 30);
             $table->string('surname', 30);

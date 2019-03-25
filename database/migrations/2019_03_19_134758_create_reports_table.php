@@ -16,7 +16,6 @@ class CreateReportsTable extends Migration
         Schema::create('reports', function (Blueprint $table) {
             // Chiave primaria
             $table->bigIncrements('id');
-            $table->primary('id');
             // Chiavi esterne
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->reference('id')->on('users');
@@ -28,9 +27,9 @@ class CreateReportsTable extends Migration
             $table->string('title', 100);
             $table->string('address');
             $table->string('street_number')->nullable();
-            $table->string('description', 2000);
-            $table->string('tags');
-            $table->string('media');
+            $table->string('description', 2000)->nullable();
+            $table->string('tags', 200)->nullable();
+            $table->binary('media', 10)->nullable();
             $table->timestamps();
         });
     }

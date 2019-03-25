@@ -10,9 +10,6 @@
     <div class="container mt-4">
       @yield('content')
     </div>
-
-    <footer id="footer" class="text-center text-light">
-      <p class="font-weight-bold">Copyright 2018 &copy; Vigiles Staff</p>
-    </footer>
+    @include('inc.footer')
   </body>
 </html>

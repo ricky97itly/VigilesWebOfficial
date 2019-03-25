@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateZonesTable extends Migration
+class CreateGMapsGeoCacheTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateZonesTable extends Migration
      */
     public function up()
     {
-        Schema::create('zones', function (Blueprint $table) {
-            // Chiave primaria
-            $table->bigIncrements('id');
-            // Altri campi
-            $table->string('zone', 40);
+        Schema::create('gmaps_geocache', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('address');
+            $table->string('latitude');
+            $table->string('longitude');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateZonesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zones');
+        Schema::drop('gmaps_geocache');
     }
 }

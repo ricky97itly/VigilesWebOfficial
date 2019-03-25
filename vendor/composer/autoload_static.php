@@ -103,6 +103,7 @@ class ComposerStaticInit175342a6706d9ff54ce62854b248dea4
         'F' => 
         array (
             'Fideloper\\Proxy\\' => 16,
+            'FarhanWazir\\GoogleMaps\\' => 23,
             'Faker\\' => 6,
         ),
         'E' => 
@@ -286,6 +287,10 @@ class ComposerStaticInit175342a6706d9ff54ce62854b248dea4
         'Fideloper\\Proxy\\' => 
         array (
             0 => __DIR__ . '/..' . '/fideloper/proxy/src',
+        ),
+        'FarhanWazir\\GoogleMaps\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/farhanwazir/laravelgooglemaps/src/FarhanWazir/GoogleMaps',
         ),
         'Faker\\' => 
         array (
@@ -1004,6 +1009,10 @@ class ComposerStaticInit175342a6706d9ff54ce62854b248dea4
         'Faker\\Provider\\zh_TW\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/zh_TW/Text.php',
         'Faker\\UniqueGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/UniqueGenerator.php',
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/ValidGenerator.php',
+        'FarhanWazir\\GoogleMaps\\Containers\\isInsidePolygon' => __DIR__ . '/..' . '/farhanwazir/laravelgooglemaps/src/FarhanWazir/GoogleMaps/Containers/isInsidePolygon.php',
+        'FarhanWazir\\GoogleMaps\\Facades\\GMapsFacade' => __DIR__ . '/..' . '/farhanwazir/laravelgooglemaps/src/FarhanWazir/GoogleMaps/Facades/GMapsFacade.php',
+        'FarhanWazir\\GoogleMaps\\GMaps' => __DIR__ . '/..' . '/farhanwazir/laravelgooglemaps/src/FarhanWazir/GoogleMaps/GMaps.php',
+        'FarhanWazir\\GoogleMaps\\GMapsServiceProvider' => __DIR__ . '/..' . '/farhanwazir/laravelgooglemaps/src/FarhanWazir/GoogleMaps/GMapsServiceProvider.php',
         'Fideloper\\Proxy\\TrustProxies' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustProxies.php',
         'Fideloper\\Proxy\\TrustedProxyServiceProvider' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustedProxyServiceProvider.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',

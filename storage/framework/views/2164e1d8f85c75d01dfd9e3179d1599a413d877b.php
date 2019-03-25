@@ -1,4 +1,3 @@
-<?php /* /Users/masterp/Desktop/VIGILESWEB/resources/views/layouts/app.blade.php */ ?>
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
   <head>
@@ -11,9 +10,8 @@
     <div class="container mt-4">
       <?php echo $__env->yieldContent('content'); ?>
     </div>
-
-    <footer id="footer" class="text-center text-light">
-      <p class="font-weight-bold">Copyright 2018 &copy; Vigiles Staff</p>
-    </footer>
+    <?php echo $__env->make('inc.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   </body>
 </html>
+
+<?php /* /Users/masterp/Desktop/VIGILESWEB/resources/views/layouts/app.blade.php */ ?>

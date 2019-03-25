@@ -12,7 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    $config['center'] = 'New York, USA';
+    $config['zoom'] = '15';
+    $config['map_height'] = '700px';
+    // $config['map_width'] = '100%';
+    $config['scrollwheel'] = true;
+
+    GMaps::initialize($config);
+
+    $map = GMaps::create_map();
+
+    return view('home')->with('map', $map);
 });
 
 Route::get('/notifiche', function () {

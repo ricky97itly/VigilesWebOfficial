@@ -1,6 +1,19 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/app.css">
+        <title>Vigiles Web</title>
 
-@section('content')
-<h3>PORCODDIO</h3>
-<p>Questa è la home page del nostro sito</p>
-@endsection
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+        {!! $map['js'] !!}
+    </head>
+    <body>
+      @include('inc.navbar')
+      {!! $map['html'] !!}
+      @include('inc.footer')
+    </body>
+</html>

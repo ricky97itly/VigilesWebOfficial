@@ -16,7 +16,6 @@ class CreateOperatorsTable extends Migration
         Schema::create('operators', function (Blueprint $table) {
             // Chiave primaria
             $table->bigIncrements('id');
-            $table->primary('id');
             // Altri campi
             $table->string('name', 30);
             $table->string('surname', 30);

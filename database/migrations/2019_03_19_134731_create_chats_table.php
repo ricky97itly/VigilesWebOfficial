@@ -16,7 +16,6 @@ class CreateChatsTable extends Migration
         Schema::create('chats', function (Blueprint $table) {
             // Chiave primaria
             $table->bigIncrements('id');
-            $table->primary('id');
             // Chiavi esterne
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->reference('id')->on('users');
@@ -25,8 +24,8 @@ class CreateChatsTable extends Migration
             $table->unsignedBigInteger('report_id');
             $table->foreign('report_id')->reference('id')->on('reports');
             // Altri campi
+            $table->longText('messaggio');
             $table->timestamps();
-            $table->text();
         });
     }
 
