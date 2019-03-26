@@ -12,8 +12,9 @@
 */
 
 Route::get('/', function () {
-    $config['center'] = 'New York, USA';
-    $config['zoom'] = '15';
+
+    $config['center'] = '45.4641013,9.1897378';
+    $config['zoom'] = '13';
     $config['map_height'] = '700px';
     // $config['map_width'] = '100%';
     $config['scrollwheel'] = true;

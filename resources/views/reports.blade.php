@@ -17,7 +17,7 @@
       </div>
       <div class="form-group col-md-1 col-sm-2">
         {{Form::label('streetNumber', 'Civico *')}}
-        {{Form::text('streetNumber', '', ['class' => 'form-control', 'placeholder' => 'Civico'])}}
+        {{Form::text('streetNumber', '', ['class' => 'form-control', 'placeholder' => 'N'])}}
       </div>
       <div class="form-group col-md-12 col-sm-12">
         {{Form::label('description', 'Descrizione')}}

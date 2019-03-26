@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" dir="ltr">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Vigiles Web</title>
