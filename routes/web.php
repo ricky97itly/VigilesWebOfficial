@@ -15,8 +15,8 @@ Route::get('/', function () {
 
     $config['center'] = '45.4641013,9.1897378';
     $config['zoom'] = '13';
-    $config['map_height'] = '700px';
-    // $config['map_width'] = '100%';
+    $config['map_height'] = '84vh';
+    $config['map_width'] = '100%';
     $config['scrollwheel'] = true;
 
     GMaps::initialize($config);
@@ -37,3 +37,7 @@ Route::get('/segnalazioni', function () {
 Route::get('/cerca', function () {
     return view('search');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

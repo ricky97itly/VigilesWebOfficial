@@ -8,17 +8,21 @@
   font-weight: 600;
 }
 
-#navLogo {
-  width: 50%;
-  height: 50%;
-}
-
-#footer, .bg-vigiles, .btn-vigiles, .btn-vigiles-rounded {
-  background-color: #ff4c4c;
+.bg-vigiles, .btn-vigiles, .btn-vigiles-rounded {
+  background-color: $vigilesRed;
 }
 
 #footer {
-  margin-top: 20px;
+  height: 6vh;
   padding-top: 17px;
   padding-bottom: 5px;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  background-color: $vigilesGrey;
+}
+
+#navLogo {
+  width: 50%;
+  height: 50%;
 }

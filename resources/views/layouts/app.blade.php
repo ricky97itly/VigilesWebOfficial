@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr">
-  <head>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vigiles Web</title>
-    <link rel="stylesheet" href="/css/app.css">
-  </head>
-  <body>
-    @include('inc.navbar')
-    <div class="container mt-4">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>Vigiles</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+  @include('inc.navbar')
+  <div id="app">
+    <main class="container py-4">
       @yield('content')
-    </div>
-    @include('inc.footer')
-  </body>
+    </main>
+  </div>
+  @include('inc.footer');
+</body>
 </html>

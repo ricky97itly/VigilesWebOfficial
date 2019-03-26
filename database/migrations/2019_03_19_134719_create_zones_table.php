@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOperatorsTable extends Migration
+class CreateZonesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,15 @@ class CreateOperatorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('operators', function (Blueprint $table) {
+        Schema::create('zones', function (Blueprint $table) {
             // Chiave primaria
             $table->bigIncrements('id');
             // Altri campi
-            $table->string('name', 30);
-            $table->string('surname', 30);
-            $table->string('email')->unique();
-            $table->string('password', 30);
+            $table->string('zone', 40);
+            $table->polygon('position');
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -33,6 +30,6 @@ class CreateOperatorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('operators');
+        Schema::dropIfExists('zones');
     }
 }

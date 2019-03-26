@@ -10665,12 +10665,6 @@ a.text-dark:focus {
   font-weight: 600;
 }
 
-#navLogo {
-  width: 50%;
-  height: 50%;
-}
-
-#footer,
 .bg-vigiles,
 .btn-vigiles,
 .btn-vigiles-rounded {
@@ -10678,8 +10672,17 @@ a.text-dark:focus {
 }
 
 #footer {
-  margin-top: 20px;
+  height: 6vh;
   padding-top: 17px;
   padding-bottom: 5px;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  background-color: #34383f;
+}
+
+#navLogo {
+  width: 50%;
+  height: 50%;
 }
 

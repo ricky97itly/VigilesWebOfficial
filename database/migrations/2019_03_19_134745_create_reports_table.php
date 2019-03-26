@@ -18,11 +18,11 @@ class CreateReportsTable extends Migration
             $table->bigIncrements('id');
             // Chiavi esterne
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->reference('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('code_id');
-            $table->foreign('code_id')->reference('id')->on('codes');
+            $table->foreign('code_id')->references('id')->on('codes');
             $table->unsignedBigInteger('zone_id');
-            $table->foreign('zone_id')->reference('id')->on('zones');
+            $table->foreign('zone_id')->references('id')->on('zones');
             // Altri campi
             $table->string('title', 100);
             $table->string('address');

@@ -24,8 +24,9 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->string('address', 50);
             $table->unsignedSmallInteger('street_number');
+            $table->boolean('is_admin');
             $table->rememberToken();
-            $table->string('remember_token', 100);
+            //$table->string('remember_token', 100);
             $table->timestamps();
         });
     }

@@ -10,7 +10,15 @@
   </head>
   <body>
     @include('inc.navbar')
+
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
+
     {!! $map['html'] !!}
+
     @include('inc.footer')
   </body>
 </html>

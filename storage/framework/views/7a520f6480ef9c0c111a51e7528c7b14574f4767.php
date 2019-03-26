@@ -6,15 +6,23 @@
     <link rel="stylesheet" href="/css/app.css">
     <title>Vigiles Web</title>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <?php echo $map['js']; ?>
 
   </head>
   <body>
     <?php echo $__env->make('inc.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    <?php echo $map['html']; ?>
 
+    <?php if(session('status')): ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo e(session('status')); ?>
+
+        </div>
+    <?php endif; ?>
+
+    <div id="map">
+      <?php echo $map['html']; ?>
+
+    </div>
     <?php echo $__env->make('inc.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   </body>
 </html>
