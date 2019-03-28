@@ -14,11 +14,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('head_content')
 </head>
-<body>
+<body class="bodyy">
   @include('inc.navbar')
   <div id="app">
-    <main class="container py-4">
+    <main class="{{ Request::is('/') ? '' : 'container py-4' }}">
       @yield('content')
     </main>
   </div>

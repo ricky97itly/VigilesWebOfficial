@@ -14,11 +14,12 @@
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <?php echo $__env->yieldContent('head_content'); ?>
 </head>
-<body>
+<body class="bodyy">
   <?php echo $__env->make('inc.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <div id="app">
-    <main class="container py-4">
+    <main class="<?php echo e(Request::is('/') ? '' : 'container py-4'); ?>">
       <?php echo $__env->yieldContent('content'); ?>
     </main>
   </div>

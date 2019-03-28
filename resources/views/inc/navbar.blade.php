@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-vigiles">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-vigiles">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ url('/') }}">
       <img id="navLogo" src="{{ asset('/img/WhiteSmall.png') }}" alt="Vigiles White Logo">
@@ -34,7 +34,7 @@
 
           @if (Route::has('register'))
           <li class="{{ Request::is('register') ? 'active font-weight-bold' : '' }} nav-item">
-            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
           </li>
           @endif
 
@@ -45,7 +45,7 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+              <a class="nav-link-dropdown dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
               </a>
 

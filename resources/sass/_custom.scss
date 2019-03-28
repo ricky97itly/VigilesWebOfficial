@@ -12,6 +12,11 @@
   background-color: $vigilesRed;
 }
 
+.text-vigiles {
+  color: $vigilesRed;
+  font-size: 18px;
+}
+
 #footer {
   height: 6vh;
   padding-top: 17px;
@@ -19,10 +24,32 @@
   position: fixed;
   width: 100%;
   bottom: 0px;
-  background-color: $vigilesGrey;
+  background-color: $vigilesRed;
 }
 
 #navLogo {
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
+}
+
+#navbar {
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  text-indent: 7px;
+  font-weight: 800;
+  transition-duration: 0.75s;
+}
+
+.nav-link-dropdown:hover, .btn-link-red:hover {
+  color: $vigilesRed;
+  text-indent: 7px;
+  font-weight: 800;
+  transition-duration: 0.75s;
+}
+
+.nav-link-dropdown, .btn-link-red {
+  color: $vigilesRed;
+  font-weight: 500;
 }

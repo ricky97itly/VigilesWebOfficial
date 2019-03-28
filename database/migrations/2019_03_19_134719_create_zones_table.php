@@ -18,7 +18,7 @@ class CreateZonesTable extends Migration
             $table->bigIncrements('id');
             // Altri campi
             $table->string('zone', 40);
-            $table->polygon('position');
+            $table->polygon('positions');
             $table->timestamps();
         });
     }
