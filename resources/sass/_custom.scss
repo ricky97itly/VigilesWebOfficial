@@ -1,22 +1,3 @@
-.btn-vigiles-rounded {
-  border-radius: 100%;
-  padding-left: 37px;
-  padding-right: 37px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  font-size: 60px;
-  font-weight: 600;
-}
-
-.bg-vigiles, .btn-vigiles, .btn-vigiles-rounded {
-  background-color: $vigilesRed;
-}
-
-.text-vigiles {
-  color: $vigilesRed;
-  font-size: 18px;
-}
-
 #footer {
   height: 6vh;
   padding-top: 17px;
@@ -36,6 +17,32 @@
   font-size: 16px;
 }
 
+.address {
+  color: $vigilesRed;
+  text-transform: capitalize;
+}
+
+.btn-vigiles-rounded {
+  border-radius: 100%;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.bg-vigiles, .btn-vigiles, .btn-vigiles-rounded {
+  background-color: $vigilesRed;
+}
+
+.link-red:hover {
+  color: $vigilesRed;
+  font-weight: 600;
+  transition-duration: 0.50s;
+  text-decoration: none;
+}
+
 .nav-link:hover {
   text-indent: 7px;
   font-weight: 800;
@@ -49,7 +56,19 @@
   transition-duration: 0.75s;
 }
 
-.nav-link-dropdown, .btn-link-red {
+.nav-link-dropdown, .btn-link-red, .link-red {
   color: $vigilesRed;
   font-weight: 500;
+}
+
+.profilePic {
+  border: 3px solid $vigilesRed;
+  border-radius: 100%;
+  width: 18vh;
+  height: 18vh;
+}
+
+.text-vigiles {
+  color: $vigilesRed;
+  font-size: 18px;
 }

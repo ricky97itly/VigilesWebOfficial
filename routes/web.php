@@ -11,33 +11,37 @@
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//
+//     $config['center'] = '45.4641013,9.1897378';
+//     $config['zoom'] = '13';
+//     $config['map_height'] = '84vh';
+//     $config['map_width'] = '100%';
+//     $config['scrollwheel'] = true;
+//
+//     GMaps::initialize($config);
+//
+//     $map = GMaps::create_map();
+//
+//     return view('home')->with('map', $map);
+// });
 
-    $config['center'] = '45.4641013,9.1897378';
-    $config['zoom'] = '13';
-    $config['map_height'] = '84vh';
-    $config['map_width'] = '100%';
-    $config['scrollwheel'] = true;
-
-    GMaps::initialize($config);
-
-    $map = GMaps::create_map();
-
-    return view('home')->with('map', $map);
-});
-
-Route::get('/notifiche', function () {
-    return view('notifications');
-});
-
-Route::get('/segnalazioni', function () {
-    return view('reports');
-});
-
-Route::get('/cerca', function () {
-    return view('search');
-});
+// Route::get('/notifiche', function () {
+//     return view('notifications');
+// });
+//
+// Route::get('/segnalazioni', function () {
+//     return view('reports');
+// });
+//
+// Route::get('/cerca', function () {
+//     return view('search');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/notifiche', 'NotificationsController@index')->name('notifiche')->middleware('auth');
+Route::get('/segnalazioni', 'ReportsController@index')->name('segnalazioni')->middleware('auth');
+Route::get('/cerca', 'SearchController@index')->name('cerca')->middleware('auth');
+Route::get('/profilo', 'ProfileController@index')->name('profilo')->middleware('auth');

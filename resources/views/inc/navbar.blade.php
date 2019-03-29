@@ -9,20 +9,22 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left Side Of Navbar -->
-      <ul class="navbar-nav mr-auto">
-        <li class="{{ Request::is('/') ? 'active font-weight-bold' : '' }} nav-item">
-          <a class="nav-link" href="{{ url('/') }}">Home</a>
-        </li>
-        <li class="{{ Request::is('notifiche') ? 'active font-weight-bold' : '' }} nav-item">
-          <a class="nav-link" href="{{ url('/notifiche') }}">Notifiche</a>
-        </li>
-        <li class="{{ Request::is('segnalazioni') ? 'active font-weight-bold' : '' }} nav-item">
-          <a class="nav-link" href="{{ url('/segnalazioni') }}">Segnala</a>
-        </li>
-        <li class="{{ Request::is('cerca') ? 'active font-weight-bold' : '' }} nav-item">
-          <a class="nav-link" href="{{ url('/cerca') }}">Cerca</a>
-        </li>
-      </ul>
+      @if (Auth::check())
+        <ul class="navbar-nav mr-auto">
+          <li class="{{ Request::is('/') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/') }}">Home</a>
+          </li>
+          <li class="{{ Request::is('notifiche') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/notifiche') }}">Notifiche</a>
+          </li>
+          <li class="{{ Request::is('segnalazioni') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/segnalazioni') }}">Segnala</a>
+          </li>
+          <li class="{{ Request::is('cerca') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/cerca') }}">Cerca</a>
+          </li>
+        </ul>
+      @endif
 
       <!-- Right Side Of Navbar -->
       <ul class="navbar-nav ml-auto">
@@ -45,8 +47,12 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="nav-link-dropdown dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
+              <a class="nav-link-dropdown dropdown-item mt-2 mb-2" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
+              </a>
+
+              <a class="nav-link-dropdown dropdown-item mt-2 mb-2" href="{{ url('/profilo') }}">
+                <i class="fa fa-user"></i> {{ __('Profilo') }}
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
