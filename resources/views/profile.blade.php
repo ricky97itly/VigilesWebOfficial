@@ -3,7 +3,7 @@
 @section('content')
   <div class="card">
     <div class="card-header text-vigiles font-weight-bold">
-      {{__('Profilo')}} <a class="link-red" href="{{ url('profilo/'.$user->id.'/modifica') }}"><i class="fa fa-pen"></i></a>
+      {{__('Profilo')}} <a class="link-red" href="{{ url('profilo/modifica') }}"><i class="fa fa-pen"></i></a>
     </div>
     <div class="card-body">
       <div class="row">

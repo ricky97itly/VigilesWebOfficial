@@ -18,6 +18,6 @@ Route::get('/notifiche', 'NotificationsController@index')->name('notifiche')->mi
 Route::get('/segnalazioni', 'ReportsController@index')->name('segnalazioni')->middleware('auth');
 Route::get('/cerca', 'SearchController@index')->name('cerca')->middleware('auth');
 Route::get('/profilo', 'ProfileController@index')->name('profilo')->middleware('auth');
-Route::get('/profilo/{id}/modifica', 'ProfileController@edit')->middleware('auth');
+Route::get('/profilo/modifica', 'ProfileController@edit')->middleware('auth');
 Route::post('/profilo/{id}', 'ProfileController@update')->middleware('auth');
 // Route::resource('/profilo/{id}/modifica', 'ProfileController')->middleware('auth');

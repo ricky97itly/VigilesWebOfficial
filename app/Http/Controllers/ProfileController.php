@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -62,9 +63,9 @@ class ProfileController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit($id)
+  public function edit()
   {
-    $user = User::find($id);
+    $user = User::find(Auth::user()->id);
     return view('profile_update')->with('user', $user);
   }
 
@@ -78,18 +79,19 @@ class ProfileController extends Controller
   public function update(Request $request, $id)
   {
     // Trova il vecchio utente per confrontarlo col nuovo
-    $old_user = User::find($id);
+    $user = User::find($id);
     // Crea un nuovo utente prendendo i dati dalla request del form profile_update
     $user->name = $request->name;
     $user->surname = $request->surname;
     $user->address = $request->address;
     $user->street_number = $request->street_number;
     // Controlli sulle password: i 3 campi devono essere inseriti (diversi da null), la password e la conferma password devono essere uguali e la vecchia password dev'essere uguale a quella precedentemente salvata nel DB (Si fa con Hash::check($nuova, $vecchia)).
-    if($request->password != null && $request->password_confirmation != null && $request->old_password != null && $request->password === $request->password_confirmation && Hash::check($request->password, $request->old_password)) {
-      $user->password = $request->password;
+    if($request->password != null && $request->password_confirmation != null && $request->old_password != null && $request->password === $request->password_confirmation && Hash::check($request->old_password, $user->password)) {
+      $user->password = Hash::make($request->password);
     }
 
     $user->save();
+    return redirect('/profilo');
   }
 
   /**
