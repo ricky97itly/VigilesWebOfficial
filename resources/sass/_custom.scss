@@ -22,7 +22,23 @@
   text-transform: capitalize;
 }
 
-.btn-vigiles-rounded {
+.btn-vigiles {
+  border-radius: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: #fff;
+}
+
+.btn-vigiles:hover {
+  border-radius: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: $vigilesRed;
+  background-color: #fff;
+  border: 2px solid $vigilesRed;
+}
+
+.btn-vigiles-circle {
   border-radius: 100%;
   padding-left: 22px;
   padding-right: 22px;
@@ -30,30 +46,45 @@
   padding-bottom: 6px;
   font-size: 40px;
   font-weight: 600;
-}
-
-.bg-vigiles, .btn-vigiles, .btn-vigiles-rounded {
+  color: #fff;
   background-color: $vigilesRed;
 }
 
-.link-red:hover {
-  color: $vigilesRed;
+.btn-vigiles-circle:hover {
+  border-radius: 100%;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 40px;
   font-weight: 600;
-  transition-duration: 0.50s;
-  text-decoration: none;
+  color: $vigilesRed;
+  background-color: #fff;
+  border: 2px solid $vigilesRed;
 }
 
-.nav-link:hover {
-  text-indent: 7px;
-  font-weight: 800;
-  transition-duration: 0.75s;
+.bg-vigiles, .btn-vigiles, .btn-vigiles-circle {
+  background-color: $vigilesRed;
 }
 
-.nav-link-dropdown:hover, .btn-link-red:hover {
+// .link-red:hover {
+//   font-weight: 600;
+//   transition-duration: 0.50s;
+//   text-decoration: none;
+// }
+//
+// .nav-link:hover {
+//   text-indent: 7px;
+//   font-weight: 800;
+//   transition-duration: 0.75s;
+// }
+
+.nav-link-dropdown:hover, .btn-link-red:hover, .nav-link:hover, .link-red:hover {
   color: $vigilesRed;
   text-indent: 7px;
   font-weight: 800;
-  transition-duration: 0.75s;
+  transition: text-indent 1s;
+  text-decoration: none;
 }
 
 .nav-link-dropdown, .btn-link-red, .link-red {

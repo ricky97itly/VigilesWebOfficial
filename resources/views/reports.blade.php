@@ -28,10 +28,10 @@
         </div>
         <div class="form-group text-center col-md-12 col-sm-12">
           {{Form::label('media', 'Aggiungi foto o video')}} <br>
-          {{Form::button('<i class="fa fa-plus"></i>', ['class' => 'btn btn-vigiles-rounded text-light'])}}
+          {{Form::button('<i class="fa fa-plus"></i>', ['class' => 'btn btn-vigiles-circle'])}}
         </div>
         <div class="form-group text-center col-md-12 col-sm-12">
-          {{Form::submit('Invia', ['class' => 'btn btn-vigiles text-light'])}}
+          {{Form::submit('Invia', ['class' => 'btn btn-vigiles'])}}
         </div>
       </div>
     {!! Form::close() !!}

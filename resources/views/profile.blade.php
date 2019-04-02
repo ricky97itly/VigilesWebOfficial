@@ -3,20 +3,20 @@
 @section('content')
   <div class="card">
     <div class="card-header text-vigiles font-weight-bold">
-      {{__('Profilo')}} <a class="link-red" href="{{ url('/profilo/modifica') }}"><i class="fa fa-pen"></i></a> 
+      {{__('Profilo')}} <a class="link-red" href="{{ url('profilo/'.$user->id.'/modifica') }}"><i class="fa fa-pen"></i></a>
     </div>
-    <div class="card-body well">
+    <div class="card-body">
       <div class="row">
+
         <!-- Immagine profilo e nome cognome -->
         <div class="col-md-8 col-sm-8">
           <div class="list-inline">
             <img class="profilePic list-inline-item" src="{{ asset('img/profilePic.jpg')}}" alt="Your profile picture">
             <div class="list-inline-item align-middle">
-              <h2>{{ Auth::user()->name }} {{ Auth::user()->surname }}</h2>
-              <h5 class="address">{{ Auth::user()->address }}, {{ Auth::user()->street_number}}</h5>
+              <h2>{{ $user->name }} {{ $user->surname }}</h2>
+              <h5 class="address">{{ $user->address }}, {{ $user->street_number }}</h5>
             </div>
           </div>
-
         </div>
 
         <!-- Opzioni -->
@@ -33,9 +33,13 @@
             <p class="list-group-item">Disattiva tutte le notifiche
               <input class="checkbox-circle" type="checkbox" name="stop_notifications" value="stop_notifications">
             </p>
-            <a class="link-red list-group-item" href="{{ url('/profilo/cambia_password') }}">Modifica password</a>
+            <!-- <a class="link-red list-group-item" href="{{ url('/profilo/cambia_password') }}">Modifica password</a> -->
           </div>
         </div>
+      </div>
+      <hr>
+      <div class="card-body">
+        <h2>JACKSON MARTINEZ</h2>
       </div>
     </div>
   </div>
