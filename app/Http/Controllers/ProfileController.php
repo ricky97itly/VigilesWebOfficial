@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Auth;
 use App\User;
 use Illuminate\Http\Request;
@@ -63,9 +64,9 @@ class ProfileController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function edit()
+  public function edit($id)
   {
-    $user = User::find(Auth::user()->id);
+    $user = Auth::user();
     return view('profile_update')->with('user', $user);
   }
 
@@ -80,18 +81,31 @@ class ProfileController extends Controller
   {
     // Trova il vecchio utente per confrontarlo col nuovo
     $user = User::find($id);
-    // Crea un nuovo utente prendendo i dati dalla request del form profile_update
-    $user->name = $request->name;
-    $user->surname = $request->surname;
-    $user->address = $request->address;
-    $user->street_number = $request->street_number;
-    // Controlli sulle password: i 3 campi devono essere inseriti (diversi da null), la password e la conferma password devono essere uguali e la vecchia password dev'essere uguale a quella precedentemente salvata nel DB (Si fa con Hash::check($nuova, $vecchia)).
-    if($request->password != null && $request->password_confirmation != null && $request->old_password != null && $request->password === $request->password_confirmation && Hash::check($request->old_password, $user->password)) {
+
+    // Validazione dei dati
+    $validator = Validator::make($request->all(), [
+      'street_number' => 'integer',
+      'old_password' => 'nullable',
+      'password' => 'bail|nullable|required_with:old_password|different:old_password',
+      'password_confirmation' => 'bail|nullable|required_with:password|same:password'
+    ]);
+
+    // Azioni conseguenti alla validazione
+    if ($validator->fails()) {
+      // ERRORE - Torna alla view precedente ritornando gli errori
+      return redirect('/profile/'.$user->id.'/edit')->withErrors($validator);
+    } else {
+      // OK - Crea un nuovo utente prendendo i dati dalla request del form profile_update
+      $user->name = $request->name;
+      $user->surname = $request->surname;
       $user->password = Hash::make($request->password);
+      $user->address = $request->address;
+      $user->street_number = $request->street_number;
     }
 
+    // Salva utente nel DB e torna al profilo
     $user->save();
-    return redirect('/profilo');
+    return redirect('/profile');
   }
 
   /**
@@ -100,8 +114,11 @@ class ProfileController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function destroy($id)
+  public function destroy()
   {
-
+    $user = Auth::user();
+    $user->delete();
+    
+    return redirect('/login');
   }
 }

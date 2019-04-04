@@ -45,7 +45,7 @@
   padding-top: 6px;
   padding-bottom: 6px;
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 500;
   color: #fff;
   background-color: $vigilesRed;
 }
@@ -67,29 +67,17 @@
   background-color: $vigilesRed;
 }
 
-// .link-red:hover {
-//   font-weight: 600;
-//   transition-duration: 0.50s;
-//   text-decoration: none;
-// }
-//
-// .nav-link:hover {
-//   text-indent: 7px;
-//   font-weight: 800;
-//   transition-duration: 0.75s;
-// }
+.nav-link-dropdown, .btn-link-red, .link-red {
+  color: $vigilesRed;
+  font-weight: 500;
+}
 
 .nav-link-dropdown:hover, .btn-link-red:hover, .nav-link:hover, .link-red:hover {
   color: $vigilesRed;
   text-indent: 7px;
-  font-weight: 800;
+  font-weight: 600;
   transition: text-indent 1s;
   text-decoration: none;
-}
-
-.nav-link-dropdown, .btn-link-red, .link-red {
-  color: $vigilesRed;
-  font-weight: 500;
 }
 
 .profilePic {
@@ -99,7 +87,10 @@
   height: 18vh;
 }
 
-.text-vigiles {
+.text-vigiles, .title-vigiles {
   color: $vigilesRed;
-  font-size: 18px;
+}
+
+.title-vigiles {
+  font-size: 20px;
 }

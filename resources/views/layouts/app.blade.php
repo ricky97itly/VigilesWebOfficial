@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Vigiles</title>
+    <title>Vigiles Milano | La sicurezza a portata di clic</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -16,9 +16,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('head_content')
 </head>
-<body class="bodyy">
+<body>
   @include('inc.navbar')
   <div id="app">
+    <div class="container mt-4">
+      @include('inc.errors')
+    </div>
     <main class="{{ Request::is('/') ? '' : 'container py-4' }}">
       @yield('content')
     </main>

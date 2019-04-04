@@ -4,14 +4,23 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
+
+      {{-- Modifica profilo --}}
       <div class="card">
-        <div class="card-header text-vigiles font-weight-bold">PROFILO</div>
+        <div class="card-header title-vigiles font-weight-bold">
+          {{ __('Profilo')}}
+        </div>
 
         <div class="card-body">
-            <h2 class="text-vigiles text-center mb-4 font-weight-bold">{{ __('Aggiorna profilo') }}</h2>
+          <div class="row">
+            <div class="col-md-6 offset-md-4">
+              <h4 class="text-vigiles text-left mb-4 font-weight-bold">{{ __('Aggiorna profilo') }}</h4>
+            </div>
+          </div>
 
-          <form method="POST" action="{{ url('profilo/'.$user->id) }}">
+          <form method="POST" action="{{ action('ProfileController@update', $user->id) }}">
             @csrf
+            @method('PUT')
 
             <div class="form-group row">
               <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
@@ -79,7 +88,13 @@
             </div>
 
             <hr>
-            <h2 class="text-vigiles text-center mb-4 font-weight-bold">{{__('Modifica password')}}</h2>
+
+            {{-- Modifica password --}}
+            <div class="row">
+              <div class="col-md-6 offset-md-4">
+                <h4 class="text-vigiles text-left mb-4 font-weight-bold">{{__('Modifica password')}}</h4>
+              </div>
+            </div>
 
             <div class="form-group row">
               <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Vecchia password') }}</label>
@@ -119,7 +134,7 @@
 
             <div class="form-group row mb-0">
               <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn font-weight-bold btn-vigiles">
+                <button type="submit" class="btn btn-vigiles font-weight-bold mt-3">
                   {{ __('Aggiorna') }}
                 </button>
               </div>

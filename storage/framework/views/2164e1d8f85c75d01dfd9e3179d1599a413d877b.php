@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
-    <title>Vigiles</title>
+    <title>Vigiles Milano | La sicurezza a portata di clic</title>
 
     <!-- Scripts -->
     <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
@@ -16,9 +16,12 @@
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
     <?php echo $__env->yieldContent('head_content'); ?>
 </head>
-<body class="bodyy">
+<body>
   <?php echo $__env->make('inc.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <div id="app">
+    <div class="container mt-4">
+      <?php echo $__env->make('inc.errors', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    </div>
     <main class="<?php echo e(Request::is('/') ? '' : 'container py-4'); ?>">
       <?php echo $__env->yieldContent('content'); ?>
     </main>

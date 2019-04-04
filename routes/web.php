@@ -17,7 +17,10 @@ Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/notifiche', 'NotificationsController@index')->name('notifiche')->middleware('auth');
 Route::get('/segnalazioni', 'ReportsController@index')->name('segnalazioni')->middleware('auth');
 Route::get('/cerca', 'SearchController@index')->name('cerca')->middleware('auth');
-Route::get('/profilo', 'ProfileController@index')->name('profilo')->middleware('auth');
-Route::get('/profilo/modifica', 'ProfileController@edit')->middleware('auth');
-Route::post('/profilo/{id}', 'ProfileController@update')->middleware('auth');
-// Route::resource('/profilo/{id}/modifica', 'ProfileController')->middleware('auth');
+
+// Route::get('/profilo', 'ProfileController@index')->name('profilo')->middleware('auth');
+// Route::get('/profilo/modifica', 'ProfileController@edit')->middleware('auth');
+// Route::post('/profilo/{id}', 'ProfileController@update')->middleware('auth');
+// Route::delete('/profilo/{id}', 'ProfileController@destroy')->middleware('auth');
+
+Route::resource('/profile', 'ProfileController');

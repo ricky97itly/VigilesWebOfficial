@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-vigiles font-weight-bold">{{ __('Login') }}</div>
+                <div class="card-header title-vigiles font-weight-bold">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -64,6 +64,15 @@
                                 @endif
                             </div>
                         </div>
+
+                        <hr>
+
+                        <div class="form-group row">
+                            <div class="col-md-8 col-sm-8 offset-md-4 offset-sm-4">
+                                <p class="mt-3 mb-0">Non hai ancora un account Vigiles? <a class="link-red" href="/register">Registrati!</a></p>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>

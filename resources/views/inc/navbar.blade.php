@@ -51,7 +51,7 @@
                 <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
               </a>
 
-              <a class="nav-link-dropdown dropdown-item mt-2 mb-2" href="{{ url('/profilo') }}">
+              <a class="nav-link-dropdown dropdown-item mt-2 mb-2" href="/profile">
                 <i class="fa fa-user"></i> {{ __('Profilo') }}
               </a>
 
