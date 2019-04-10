@@ -75,12 +75,13 @@
   font-weight: 500;
 }
 
-.nav-link-dropdown:hover, .btn-link-red:hover, .nav-link:hover, .link-red:hover {
+.nav-link-dropdown:hover, .btn-link-red:hover, .btn-link-red:active, .nav-link:hover, .link-red:hover {
   color: $vigilesRed;
   text-indent: 7px;
   font-weight: 600;
   transition: text-indent 1s;
   text-decoration: none;
+  outline: none;
 }
 
 .separator-right {
@@ -95,6 +96,8 @@
 
 .profile-col {
   min-height: 25vh;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .text-vigiles, .title-vigiles {
@@ -103,4 +106,8 @@
 
 .title-vigiles {
   font-size: 20px;
+}
+
+li {
+  list-style: none;
 }

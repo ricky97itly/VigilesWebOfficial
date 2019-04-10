@@ -11,8 +11,8 @@
     <div class="card-body">
       <div class="row">
         <!-- Immagine profilo e nome cognome -->
-        <div class="col-md-8 col-sm-8 profile-col">
-          <div class="list-inline">
+        <div class="col-md-5 col-sm-6 h-100 align-self-center">
+          <div class="list-inline align-middle">
             <img class="profile-pic border-vigiles list-inline-item" src="/storage/avatars/{{ $user->avatar }}" alt="Your profile picture" />
             <ul class="list-inline-item align-middle">
               <li><h2>{{ $user->name }} {{ $user->surname }}</h2></li>
@@ -23,7 +23,7 @@
         </div>
 
         <!-- Opzioni -->
-        <div class="col-md-4 col-sm-4 profile-col">
+        <div class="col-md-4 col-sm-4 h-100 align-self-center">
           <ul class="list-group list-group-flush align-middle">
             <li class="list-group-item">Notifiche solo per codici
               <input class="checkbox-circle checkbox-green" type="checkbox" name="green" value="green">
@@ -59,18 +59,17 @@
       </div> --}}
 
       <hr>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-6 col-sm-8 offset-md-3 offset-sm-2">
-            <form method="POST" action="{{ action('StorageController@destroy', $user->id) }}">
-              @csrf
-              @method('DELETE')
-              <label for="deleteUser" class="d-flex text-vigiles justify-content-center mb-4">{{ $user->email }}</label>
-              <button id="deleteUser" class="btn btn-block btn-vigiles font-weight-bold" type="submit" name="delete_user" onclick="confirmDelete()">
-                {{__('Cancella account!')}}
-              </button>
-            </form>
-          </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-8 offset-md-3 offset-sm-2">
+          <form method="POST" action="{{ action('StorageController@destroy', $user->id) }}">
+            @csrf
+            @method('DELETE')
+            <label for="deleteUser" class="d-flex text-vigiles justify-content-center mb-4">{{ $user->email }}</label>
+            <button id="deleteUser" class="btn btn-block btn-vigiles font-weight-bold" type="submit" name="delete_user" onclick="confirmDelete()">
+              {{__('Cancella account!')}}
+            </button>
+          </form>
         </div>
       </div>
     </div>

@@ -10738,6 +10738,7 @@ a.text-dark:focus {
 
 .nav-link-dropdown:hover,
 .btn-link-red:hover,
+.btn-link-red:active,
 .nav-link:hover,
 .link-red:hover {
   color: #ff4c4c;
@@ -10745,6 +10746,7 @@ a.text-dark:focus {
   font-weight: 600;
   transition: text-indent 1s;
   text-decoration: none;
+  outline: none;
 }
 
 .separator-right {
@@ -10759,6 +10761,8 @@ a.text-dark:focus {
 
 .profile-col {
   min-height: 25vh;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .text-vigiles,
@@ -10768,6 +10772,10 @@ a.text-dark:focus {
 
 .title-vigiles {
   font-size: 20px;
+}
+
+li {
+  list-style: none;
 }
 
 /*!

@@ -13,19 +13,23 @@
         {{-- @method('POST') --}}
 
         <div class="form-group row mb-0">
-          <div class="col-md-6 col-sm-6 align-middle separator-right">
+          <div class="col-md-4 col-sm-4 align-self-center separator-right">
             <img class="border-vigiles rounded-circle" src="/storage/avatars/{{$user->avatar}}" alt="Your profile image">
           </div>
-          <div class="col-md-6 col-sm-6 align-middle">
-            <input id="avatar" type="file" class="form-control-file btn btn-link-red {{ $errors->has('avatar') ? ' is-invalid' : '' }}" name="avatar" aria-describedby="avatar-desc">
+          <div class="col-md-8 col-sm-8 align-self-center">
+            <button class="btn btn-link-red" type="button" onclick="selectAvatar()">Seleziona immagine</button>
+            <input id="avatar" type="file" class="d-none form-control-file btn btn-link-red {{ $errors->has('avatar') ? ' is-invalid' : '' }}" name="avatar" aria-describedby="avatar-desc">
             <small id="avatar-desc" class="text-muted">Seleziona un'immagine del profilo dalla tua galleria</small>
-            <button type="submit" class="form-control btn btn-vigiles mt-4">Conferma</button>
+            <button type="submit" class="d-flex btn btn-vigiles mt-3">Conferma</button>
           </div>
-        </div>
-        <div class="form-group row">
-
         </div>
       </form>
     </div>
   </div>
+
+  <script type="text/javascript">
+    function selectAvatar() {
+      $("#avatar").click();
+    }
+  </script>
 @endsection
