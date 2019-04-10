@@ -101,11 +101,15 @@ class ProfileController extends Controller
       $user->password = Hash::make($request->password);
       $user->address = $request->address;
       $user->street_number = $request->street_number;
+      $user->profile_img = $request->profile_img;
     }
 
-    // Salva utente nel DB e torna al profilo
+    // Salva utente nel DB
     $user->save();
-    return redirect('/profile');
+    // Salva l'immagine nello storage in storage/app/images
+    $this->uploadImg($request);
+    // Torna al profilo
+    // return redirect('/profile');
   }
 
   /**
@@ -118,7 +122,7 @@ class ProfileController extends Controller
   {
     $user = Auth::user();
     $user->delete();
-    
+
     return redirect('/login');
   }
 }

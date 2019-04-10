@@ -11,34 +11,36 @@
     <div class="card-body">
       <div class="row">
         <!-- Immagine profilo e nome cognome -->
-        <div class="col-md-8 col-sm-8">
+        <div class="col-md-8 col-sm-8 profile-col">
           <div class="list-inline">
-            <img class="profilePic list-inline-item" src="{{ asset('img/profilePic.jpg')}}" alt="Your profile picture">
-            <div class="list-inline-item align-middle">
-              <h2>{{ $user->name }} {{ $user->surname }}</h2>
-              <h5 class="address">{{ $user->address }}, {{ $user->street_number }}</h5>
-            </div>
+            <img class="profile-pic border-vigiles list-inline-item" src="/storage/avatars/{{ $user->avatar }}" alt="Your profile picture" />
+            <ul class="list-inline-item align-middle">
+              <li><h2>{{ $user->name }} {{ $user->surname }}</h2></li>
+              <li><h5 class="text-muted">{{ $user->address }}, {{ $user->street_number }}</h5></li>
+              <li><a class="link-red" href="/avatar">Modifica immagine</a></li>
+            </ul>
           </div>
         </div>
 
         <!-- Opzioni -->
-        <div class="col-md-4 col-sm-4">
-          <div class="list-group list-group-flush align-middle">
-            <p class="list-group-item">Notifiche solo per codici
+        <div class="col-md-4 col-sm-4 profile-col">
+          <ul class="list-group list-group-flush align-middle">
+            <li class="list-group-item">Notifiche solo per codici
               <input class="checkbox-circle checkbox-green" type="checkbox" name="green" value="green">
               <input class="checkbox-circle checkbox-yellow" type="checkbox" name="yellow" value="yellow">
               <input class="checkbox-circle checkbox-red" type="checkbox" name="red" value="red">
-            </p>
-            <p class="list-group-item">Notifiche solo nella mia zona
+            </li>
+            <li class="list-group-item">Notifiche solo nella mia zona
               <input class="checkbox-circle" type="checkbox" name="zone_notifications" value="zone_notifications">
-            </p>
-            <p class="list-group-item">Disattiva tutte le notifiche
+            </li>
+            <li class="list-group-item">Disattiva tutte le notifiche
               <input class="checkbox-circle" type="checkbox" name="stop_notifications" value="stop_notifications">
-            </p>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
-      <hr>
+
+      {{-- <hr>
       <div class="card-body">
         <div class="row">
           <div class="col-md-12 col-sm-12">
@@ -54,12 +56,13 @@
             <h5>Amico 2</h5>
           </div>
         </div>
-      </div>
+      </div> --}}
+
       <hr>
       <div class="card-body">
         <div class="row">
           <div class="col-md-6 col-sm-8 offset-md-3 offset-sm-2">
-            <form method="POST" action="{{ action('ProfileController@destroy', $user->id) }}">
+            <form method="POST" action="{{ action('StorageController@destroy', $user->id) }}">
               @csrf
               @method('DELETE')
               <label for="deleteUser" class="d-flex text-vigiles justify-content-center mb-4">{{ $user->email }}</label>

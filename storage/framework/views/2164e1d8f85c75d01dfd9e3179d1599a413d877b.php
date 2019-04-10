@@ -17,15 +17,25 @@
     <?php echo $__env->yieldContent('head_content'); ?>
 </head>
 <body>
+
+  
   <?php echo $__env->make('inc.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <div id="app">
-    <div class="container mt-4">
-      <?php echo $__env->make('inc.errors', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    </div>
+
+    
+    <?php if($errors->any()): ?>
+      <div class="container mt-4">
+        <?php echo $__env->make('inc.errors', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+      </div>
+    <?php endif; ?>
+
+    
     <main class="<?php echo e(Request::is('/') ? '' : 'container py-4'); ?>">
       <?php echo $__env->yieldContent('content'); ?>
     </main>
   </div>
+
+  
   <?php echo $__env->make('inc.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
 </body>
 </html>

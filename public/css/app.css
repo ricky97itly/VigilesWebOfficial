@@ -10674,9 +10674,8 @@ a.text-dark:focus {
   font-size: 16px;
 }
 
-.address {
-  color: #ff4c4c;
-  text-transform: capitalize;
+.border-vigiles {
+  border: 3px solid #ff4c4c;
 }
 
 .btn-vigiles {
@@ -10726,6 +10725,10 @@ a.text-dark:focus {
   background-color: #ff4c4c;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .nav-link-dropdown,
 .btn-link-red,
 .link-red {
@@ -10744,11 +10747,18 @@ a.text-dark:focus {
   text-decoration: none;
 }
 
-.profilePic {
-  border: 3px solid #ff4c4c;
+.separator-right {
+  border-right: 1px solid #ff4c4c;
+}
+
+.profile-pic {
   border-radius: 100%;
   width: 18vh;
   height: 18vh;
+}
+
+.profile-col {
+  min-height: 25vh;
 }
 
 .text-vigiles,

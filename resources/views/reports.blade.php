@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="card">
-  <div class="card-header text-vigiles font-weight-bold">Nuova segnalazione</div>
+  <div class="card-header title-vigiles font-weight-bold">Nuova segnalazione</div>
   <div class="card-body">
     @csrf
+    @method('POST')
     {!! Form::open(['url' => 'reports/submit']) !!}
       <div class="row">
         <div class="form-group col-md-12 col-sm-12">

@@ -17,9 +17,8 @@
   font-size: 16px;
 }
 
-.address {
-  color: $vigilesRed;
-  text-transform: capitalize;
+.border-vigiles {
+  border: 3px solid $vigilesRed;
 }
 
 .btn-vigiles {
@@ -67,6 +66,10 @@
   background-color: $vigilesRed;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .nav-link-dropdown, .btn-link-red, .link-red {
   color: $vigilesRed;
   font-weight: 500;
@@ -80,11 +83,18 @@
   text-decoration: none;
 }
 
-.profilePic {
-  border: 3px solid $vigilesRed;
+.separator-right {
+  border-right: 1px solid $vigilesRed;
+}
+
+.profile-pic {
   border-radius: 100%;
   width: 18vh;
   height: 18vh;
+}
+
+.profile-col {
+  min-height: 25vh;
 }
 
 .text-vigiles, .title-vigiles {

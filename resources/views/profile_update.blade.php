@@ -18,23 +18,25 @@
             </div>
           </div>
 
-          <form method="POST" action="{{ action('ProfileController@update', $user->id) }}">
+          <form method="POST" action="{{ action('StorageController@update', $user->id) }}">
             @csrf
             @method('PUT')
 
+            {{-- Nome --}}
             <div class="form-group row">
               <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
               <div class="col-md-6">
                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ Auth::user()->name }}" required autofocus>
                 @if ($errors->has('name'))
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $errors->first('name') }}</strong>
-                </span>
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('name') }}</strong>
+                  </span>
                 @endif
               </div>
             </div>
 
+            {{-- Cognome --}}
             <div class="form-group row">
               <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }}</label>
 
@@ -49,6 +51,7 @@
               </div>
             </div>
 
+            {{-- Email --}}
             <div class="form-group row">
               <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo E-Mail') }}</label>
 
@@ -63,6 +66,7 @@
               </div>
             </div>
 
+            {{-- Indirizzo --}}
             <div class="form-group row">
               <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo') }}</label>
 
@@ -76,6 +80,7 @@
                 @endif
               </div>
 
+              {{-- Civico --}}
               <div class="col-md-2">
                 <input id="street_number" type="number" class="form-control{{ $errors->has('street_number') ? ' is-invalid' : '' }}" name="street_number" value="{{ Auth::user()->street_number }}" required>
 
@@ -87,7 +92,23 @@
               </div>
             </div>
 
-            <hr>
+            {{-- Immagine profilo --}}
+            {{-- <div class="form-group row">
+              <label for="profile_img" class="col-md-4 col-form-label text-md-right">{{ __('Modifica Immagine profilo') }}</label>
+
+              <div class="col-md-6">
+                <input id="profile_img" type="file" class="form-control btn btn-vigiles {{ $errors->has('profile_img') ? ' is-invalid' : '' }}" name="profile_img">
+                @if ($errors->has('profile_img'))
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('profile_img') }}</strong>
+                  </span>
+                @endif
+              </div>
+            </div>
+
+            <h6></h6>
+
+            <hr> --}}
 
             {{-- Modifica password --}}
             <div class="row">

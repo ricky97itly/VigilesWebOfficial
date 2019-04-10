@@ -23,4 +23,6 @@ Route::get('/cerca', 'SearchController@index')->name('cerca')->middleware('auth'
 // Route::post('/profilo/{id}', 'ProfileController@update')->middleware('auth');
 // Route::delete('/profilo/{id}', 'ProfileController@destroy')->middleware('auth');
 
-Route::resource('/profile', 'ProfileController');
+Route::resource('/profile', 'StorageController');
+Route::get('/avatar', 'StorageController@avatarIndex')->name('avatar')->middleware('auth');
+Route::post('/avatar', 'StorageController@avatarUpdate')->name('avatar');

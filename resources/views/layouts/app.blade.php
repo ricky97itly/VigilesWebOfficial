@@ -17,15 +17,25 @@
     @yield('head_content')
 </head>
 <body>
+
+  {{-- Navbar --}}
   @include('inc.navbar')
   <div id="app">
-    <div class="container mt-4">
-      @include('inc.errors')
-    </div>
+
+    {{-- Errori --}}
+    @if ($errors->any())
+      <div class="container mt-4">
+        @include('inc.errors')
+      </div>
+    @endif
+
+    {{-- Pagine dinamiche, se è la home non voglio classi, se invece è un'altra pagina voglio class container --}}
     <main class="{{ Request::is('/') ? '' : 'container py-4' }}">
       @yield('content')
     </main>
   </div>
+
+  {{-- Footer --}}
   @include('inc.footer');
 </body>
 </html>

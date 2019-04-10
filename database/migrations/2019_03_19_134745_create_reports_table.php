@@ -29,7 +29,7 @@ class CreateReportsTable extends Migration
             $table->string('street_number')->nullable();
             $table->string('description', 2000)->nullable();
             $table->string('tags', 200)->nullable();
-            $table->binary('media', 10)->nullable();
+            $table->string('media', 300)->nullable();
             $table->timestamps();
         });
     }
