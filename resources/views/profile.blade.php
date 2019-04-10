@@ -11,7 +11,7 @@
     <div class="card-body">
       <div class="row">
         <!-- Immagine profilo e nome cognome -->
-        <div class="col-md-5 col-sm-6 h-100 align-self-center">
+        <div class="col-md-6 col-sm-6 h-100 align-self-center">
           <div class="list-inline align-middle">
             <img class="profile-pic border-vigiles list-inline-item" src="/storage/avatars/{{ $user->avatar }}" alt="Your profile picture" />
             <ul class="list-inline-item align-middle">
@@ -23,7 +23,7 @@
         </div>
 
         <!-- Opzioni -->
-        <div class="col-md-4 col-sm-4 h-100 align-self-center">
+        <div class="col-md-4 offset-md-1 col-sm-4 h-100 align-self-center">
           <ul class="list-group list-group-flush align-middle">
             <li class="list-group-item">Notifiche solo per codici
               <input class="checkbox-circle checkbox-green" type="checkbox" name="green" value="green">

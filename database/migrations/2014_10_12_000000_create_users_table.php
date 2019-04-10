@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             // Chiave primaria
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->onDelete('cascade');
             // Altri campi
             $table->string('name', 30);
             $table->string('surname', 30);
@@ -27,7 +27,6 @@ class CreateUsersTable extends Migration
             $table->string('avatar', 50)->nullable();
             $table->boolean('is_admin');
             $table->rememberToken();
-            //$table->string('remember_token', 100);
             $table->timestamps();
         });
     }
@@ -39,6 +38,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Schema::dropIfExists('users');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

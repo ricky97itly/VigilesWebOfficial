@@ -19,7 +19,7 @@ class CreateReportsTable extends Migration
             // Chiavi esterne
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('code_id');
+            $table->unsignedBigInteger('code_id')->nullable();
             $table->foreign('code_id')->references('id')->on('codes');
             $table->unsignedBigInteger('zone_id');
             $table->foreign('zone_id')->references('id')->on('zones');

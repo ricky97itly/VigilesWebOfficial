@@ -18,8 +18,10 @@ class CreateZonesTable extends Migration
             $table->bigIncrements('id');
             // Altri campi
             $table->string('zone', 40);
-            $table->polygon('positions');
             $table->timestamps();
+
+            // Questo ospita il geoJson ma nn so ancora come farlo:
+            // $table->polygon('positions');
         });
     }
 
