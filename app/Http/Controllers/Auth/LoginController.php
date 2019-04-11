@@ -27,13 +27,9 @@ class LoginController extends Controller
      * @var string
      */
 
-    protected function authenticated(Request $request, $user) {
-        if ($user->is_admin == 1) {
-            return redirect('/notifiche');
-        }
-        else {
-            return redirect('/');
-        }
+    protected function authenticated(Request $request, $user)
+    {
+      return redirect('/')->with('user', $user);
     }
 
     /**

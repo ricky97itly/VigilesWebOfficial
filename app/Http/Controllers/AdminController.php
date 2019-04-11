@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -14,6 +15,12 @@ class AdminController extends Controller
     public function index()
     {
         // Query che seleziona solo le segnalazioni pending
+        $reports = DB::table('users')
+                      ->join('reports', 'users.id', '=', 'reports.user_id')
+                      ->select('users.name as user_name', 'users.surname as user_surname', 'reports.*')
+                      ->where('reports.code_id', '=', 1)
+                      ->get();
+        // dd($reports);
         return view('admin')->with('reports', $reports);
     }
 

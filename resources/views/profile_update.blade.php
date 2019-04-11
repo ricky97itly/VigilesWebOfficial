@@ -92,24 +92,6 @@
               </div>
             </div>
 
-            {{-- Immagine profilo --}}
-            {{-- <div class="form-group row">
-              <label for="profile_img" class="col-md-4 col-form-label text-md-right">{{ __('Modifica Immagine profilo') }}</label>
-
-              <div class="col-md-6">
-                <input id="profile_img" type="file" class="form-control btn btn-vigiles {{ $errors->has('profile_img') ? ' is-invalid' : '' }}" name="profile_img">
-                @if ($errors->has('profile_img'))
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('profile_img') }}</strong>
-                  </span>
-                @endif
-              </div>
-            </div>
-
-            <h6></h6>
-
-            <hr> --}}
-
             {{-- Modifica password --}}
             <div class="row">
               <div class="col-md-6 offset-md-4">

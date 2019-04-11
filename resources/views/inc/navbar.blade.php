@@ -9,7 +9,19 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left Side Of Navbar -->
-      @if (Auth::check())
+      @if (Auth::check() && Auth::user()->is_admin == 1)
+        <ul class="navbar-nav mr-auto">
+          <li class="{{ Request::is('/') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/') }}">Home</a>
+          </li>
+          <li class="{{ Request::is('cerca') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/cerca') }}">Cerca</a>
+          </li>
+          <li class="{{ Request::is('admin') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="/admin">Operatore</a>
+          </li>
+        </ul>
+      @elseif (Auth::check())
         <ul class="navbar-nav mr-auto">
           <li class="{{ Request::is('/') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="{{ url('/') }}">Home</a>
@@ -25,6 +37,7 @@
           </li>
         </ul>
       @endif
+
 
       <!-- Right Side Of Navbar -->
       <ul class="navbar-nav ml-auto">

@@ -27,4 +27,4 @@ Route::post('/avatar', 'StorageController@avatarUpdate')->name('avatar');
 // Route::delete('/profilo/{id}', 'ProfileController@destroy')->middleware('auth');
 
 Route::resource('/profile', 'StorageController');
-// Route::resource('/admin', 'AdminController');
+Route::resource('/admin', 'AdminController');

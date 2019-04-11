@@ -12,7 +12,7 @@
       <div class="row">
         <!-- Immagine profilo e nome cognome -->
         <div class="col-md-6 col-sm-6 h-100 align-self-center">
-          <div class="list-inline align-middle">
+          <div class="list-inline">
             <img class="profile-pic border-vigiles list-inline-item" src="/storage/avatars/{{ $user->avatar }}" alt="Your profile picture" />
             <ul class="list-inline-item align-middle">
               <li><h2>{{ $user->name }} {{ $user->surname }}</h2></li>
@@ -24,7 +24,7 @@
 
         <!-- Opzioni -->
         <div class="col-md-4 offset-md-1 col-sm-4 h-100 align-self-center">
-          <ul class="list-group list-group-flush align-middle">
+          <ul class="list-group list-group-flush">
             <li class="list-group-item">Notifiche solo per codici
               <input class="checkbox-circle checkbox-green" type="checkbox" name="green" value="green">
               <input class="checkbox-circle checkbox-yellow" type="checkbox" name="yellow" value="yellow">
