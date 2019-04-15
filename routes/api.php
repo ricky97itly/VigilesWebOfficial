@@ -30,4 +30,4 @@ Route::post('report', 'ReportsAPIController@store');
 Route::put('report', 'ReportsAPIController@store');
 
 // Cancella segnalazione
-Route::delete('report/id', 'ReportsAPIController@destroy');
+Route::delete('report/{id}', 'ReportsAPIController@destroy');

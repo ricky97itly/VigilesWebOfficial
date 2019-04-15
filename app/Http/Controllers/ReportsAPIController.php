@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Report;
 use App\Http\Resources\Report as ReportResource;
 
@@ -19,7 +19,7 @@ class ReportsAPIController extends Controller
         // Prende 10 segnalazioni
         $reports = Report::paginate(10);
 
-        // Restituisce collection articoli come Resource
+        // Restituisce collection segnalazioni come Resource
         return ReportResource::collection($reports);
     }
 
@@ -41,7 +41,22 @@ class ReportsAPIController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $report = $request->isMethod('put') ? Report::findOrFail($request->report_id) : new Report;
+
+      $report->id = $request->input('report_id');
+      $report->user_id = $request->input('user_id');
+      $report->code_id = $request->input('code_id');
+      $report->zone_id = $request->input('zone_id');
+      $report->title = $request->input('title');
+      $report->address = $request->input('address');
+      $report->street_number = $request->input('street_number');
+      $report->description = $request->input('description');
+      $report->tags = $request->input('tags');
+      $report->media = $request->input('media');
+
+      if($report->save()) {
+        return new ReportResource($report);
+      }
     }
 
     /**
@@ -52,7 +67,11 @@ class ReportsAPIController extends Controller
      */
     public function show($id)
     {
-        //
+      // Prendo una singola segnalazione
+      $report = Report::findOrFail($id);
+
+      // Ritorno la segnalazione singola come resource
+      return new ReportResource($report);
     }
 
     /**
@@ -86,6 +105,12 @@ class ReportsAPIController extends Controller
      */
     public function destroy($id)
     {
-        //
+      // Prendo una singola segnalazione
+      $report = Report::findOrFail($id);
+
+      // Ritorno la segnalazione appena cancellata come resource
+      if($report->delete()) {
+        return new ReportResource($report);
+      }
     }
 }

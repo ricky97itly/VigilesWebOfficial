@@ -9,6 +9,7 @@ $factory->define(App\Report::class, function (Faker $faker) {
         'zone_id'=> 1,
         'title' => $faker->text(30),
         'address' => $faker->text(30),
+        'street_number' => $faker->randomDigitNotNull,
         'description' => $faker->text(100),
         'tags'=> $faker->text(20),
         'media'=> $faker->imageUrl(300, 300, 'cats')

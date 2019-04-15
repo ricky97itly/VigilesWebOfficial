@@ -60,12 +60,12 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="nav-link-dropdown dropdown-item mt-2 mb-2" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
-              </a>
-
               <a class="nav-link-dropdown dropdown-item mt-2 mb-2" href="/profile">
                 <i class="fa fa-user"></i> {{ __('Profilo') }}
+              </a>
+
+              <a class="nav-link-dropdown dropdown-item mt-2 mb-2" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                <i class="fa fa-sign-out-alt"></i> {{ __('Logout') }}
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -12,15 +12,39 @@ class ZonesTableSeeder extends Seeder
     public function run()
     {
         DB::table('zones')->insert([
-            'zone' => 'Zona Centro Milano'
+            'zone' => 'Zona 1'
         ]);
 
         DB::table('zones')->insert([
-            'zone' => 'Zona Dimmerda Milano'
+            'zone' => 'Zona 2'
         ]);
 
         DB::table('zones')->insert([
-            'zone' => 'Zona a Muzzo Milano'
+            'zone' => 'Zona 3'
+        ]);
+
+        DB::table('zones')->insert([
+            'zone' => 'Zona 4'
+        ]);
+
+        DB::table('zones')->insert([
+            'zone' => 'Zona 5'
+        ]);
+
+        DB::table('zones')->insert([
+            'zone' => 'Zona 6'
+        ]);
+
+        DB::table('zones')->insert([
+            'zone' => 'Zona 7'
+        ]);
+
+        DB::table('zones')->insert([
+            'zone' => 'Zona 8'
+        ]);
+
+        DB::table('zones')->insert([
+            'zone' => 'Zona 9'
         ]);
     }
 }
