@@ -168,6 +168,7 @@ return [
          */
         FarhanWazir\GoogleMaps\GMapsServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -232,6 +233,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'GMaps' => FarhanWazir\GoogleMaps\Facades\GMapsFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 
     ],
 

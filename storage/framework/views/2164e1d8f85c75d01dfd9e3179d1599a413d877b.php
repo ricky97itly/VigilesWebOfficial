@@ -17,10 +17,14 @@
     <?php echo $__env->yieldContent('head_content'); ?>
 </head>
 <body>
+  <script src="js/sweetalert.min.js"></script>
 
   
   <?php echo $__env->make('inc.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <div id="app">
+
+    
+    <?php echo $__env->make('sweet::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     
     <?php if($errors->any()): ?>
@@ -39,5 +43,4 @@
   <?php echo $__env->make('inc.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
 </body>
 </html>
-
-<?php /* /Users/masterp/Desktop/VIGILESWEB/resources/views/layouts/app.blade.php */ ?>
+<?php /**PATH /Users/masterp/Desktop/VIGILESWEB/resources/views/layouts/app.blade.php ENDPATH**/ ?>

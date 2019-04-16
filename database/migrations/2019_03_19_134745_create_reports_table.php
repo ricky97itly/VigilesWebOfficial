@@ -18,7 +18,7 @@ class CreateReportsTable extends Migration
             $table->bigIncrements('id');
             // Chiavi esterne
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('code_id')->nullable();
             $table->foreign('code_id')->references('id')->on('codes');
             $table->unsignedBigInteger('zone_id');

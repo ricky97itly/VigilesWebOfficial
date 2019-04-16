@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Alert;
 use Validator;
 use Auth;
 use App\User;
@@ -118,9 +119,11 @@ class ProfileController extends Controller
    */
   public function destroy()
   {
-    $user = Auth::user();
-    $user->delete();
+    Alert::warning('Sei sicuro di voler eliminare il tuo account?', 'Attenzione!');
 
-    return redirect('/login');
+    // $user = Auth::user();
+    // $user->delete();
+    //
+    // return redirect('/login');
   }
 }

@@ -10757,6 +10757,8 @@ a.text-dark:focus {
   border-radius: 100%;
   width: 18vh;
   height: 18vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .profile-col {

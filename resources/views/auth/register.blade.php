@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header title-vigiles font-weight-bold">{{ __('Register') }}</div>
+        <div class="card-header title-vigiles font-weight-bold">{{ __('Registrati') }}</div>
 
         <div class="card-body">
 

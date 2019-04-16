@@ -13,10 +13,10 @@
         {{-- @method('POST') --}}
 
         <div class="form-group row mb-0">
-          <div class="col-md-4 col-sm-4 align-self-center separator-right">
-            <img class="border-vigiles rounded-circle" src="/storage/avatars/{{$user->avatar}}" alt="Your profile image">
+          <div class="col-md-3 col-sm-4 align-self-center separator-right">
+            <img class="profile-pic border-vigiles" src="/storage/avatars/{{$user->avatar}}" alt="Your profile image">
           </div>
-          <div class="col-md-8 col-sm-8 align-self-center">
+          <div class="col-md-9 col-sm-8 align-self-center">
             <button class="btn btn-link-red" type="button" onclick="selectAvatar()">Seleziona immagine</button>
             <input id="avatar" type="file" class="d-none form-control-file btn btn-link-red {{ $errors->has('avatar') ? ' is-invalid' : '' }}" name="avatar" aria-describedby="avatar-desc">
             <small id="avatar-desc" class="text-muted">Seleziona un'immagine del profilo dalla tua galleria</small>

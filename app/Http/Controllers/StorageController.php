@@ -18,7 +18,7 @@ class StorageController extends ProfileController
   public function avatarUpdate(Request $request) {
     // Validazione dei dati
     $validator = Validator::make($request->all(), [
-      // 'avatar' => 'bail|required|mimes:jpg,jpeg,png,svg,ttif,gif'
+      'avatar' => 'bail|required|mimes:jpg,jpeg,png,svg,ttif,gif'
     ]);
 
     // Azioni conseguenti alla validazione
@@ -32,8 +32,8 @@ class StorageController extends ProfileController
       $request->avatar->storeAs('avatars', $avatarName);
       $user->avatar = $avatarName;
       $user->save();
-      dd($user->avatar);
-      return back()->with('Evviva!', 'Hai aggiornato la tua immagine dei profilo');
+      // dd($user->avatar);
+      return redirect('/profile');
     }
   }
 }

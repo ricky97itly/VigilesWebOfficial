@@ -17,10 +17,14 @@
     @yield('head_content')
 </head>
 <body>
+  <script src="js/sweetalert.min.js"></script>
 
   {{-- Navbar --}}
   @include('inc.navbar')
   <div id="app">
+
+    {{-- Sweet alert --}}
+    @include('sweet::alert')
 
     {{-- Errori --}}
     @if ($errors->any())

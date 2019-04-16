@@ -13,7 +13,7 @@
         <!-- Immagine profilo e nome cognome -->
         <div class="col-md-6 col-sm-6 h-100 align-self-center">
           <div class="list-inline">
-            <img class="profile-pic border-vigiles list-inline-item" src="/storage/avatars/{{ $user->avatar }}" alt="Your profile picture" />
+            <img class="profile-pic border-vigiles list-inline-item" src="/storage/avatars/{{ $user->avatar }}" alt="Immagine profilo" />
             <ul class="list-inline-item align-middle">
               <li><h2>{{ $user->name }} {{ $user->surname }}</h2></li>
               <li><h5 class="text-muted">{{ $user->address }}, {{ $user->street_number }}</h5></li>
@@ -74,10 +74,4 @@
       </div>
     </div>
   </div>
-
-  <script type="text/javascript">
-    function confirmDelete() {
-      confirm('Sei sicuro di voler eliminare il tuo account?')
-    }
-  </script>
 @endsection
