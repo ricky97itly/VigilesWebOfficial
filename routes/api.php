@@ -31,3 +31,19 @@ Route::put('report', 'ReportsAPIController@store');
 
 // Cancella segnalazione
 Route::delete('report/{id}', 'ReportsAPIController@destroy');
+
+
+// Mostra tutti gli utenti
+Route::get('users', 'UsersAPIController@index');
+
+// Mostra un utente
+Route::get('user/{id}', 'UsersAPIController@show');
+
+// Crea nuovo utente
+Route::post('user', 'UsersAPIController@store');
+
+// Aggiorna utente
+Route::put('user', 'UsersAPIController@store');
+
+// Cancella utente
+Route::delete('user/{id}', 'UsersAPIController@destroy');
