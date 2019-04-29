@@ -21,5 +21,5 @@ Route::get('/avatar', 'StorageController@avatarIndex')->name('avatar')->middlewa
 
 Route::post('/avatar', 'StorageController@avatarUpdate')->name('avatar');
 
-Route::resource('/profile', 'StorageController');
-Route::resource('/admin', 'AdminController');
+Route::resource('/profile', 'StorageController')->middleware('auth');
+Route::resource('/admin', 'AdminController')->middleware('auth');

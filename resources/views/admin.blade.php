@@ -17,7 +17,7 @@
             Indirizzo
           </div>
           <div class="col-md-2 align-self-center">
-            {{-- Empty bitch --}}
+            {{-- Empty --}}
           </div>
         </div>
       </li>

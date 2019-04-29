@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use GMaps;
+use Mapper;
 
 class HomeController extends Controller
 {
@@ -24,16 +24,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $config['center'] = '45.4641013,9.1897378';
-      $config['zoom'] = '13';
-      $config['map_height'] = '84vh';
-      $config['map_width'] = '100%';
-      $config['scrollwheel'] = true;
+      // Mettere sta roba nel .env
+      // $config['center'] = '45.4641013,9.1897378';
+      // $config['zoom'] = '13';
+      // $config['map_height'] = '84vh';
+      // $config['map_width'] = '100%';
+      // $config['scrollwheel'] = true;
+      //
+      // GMaps::initialize($config);
+      //
+      // $map = GMaps::create_map();
 
-      GMaps::initialize($config);
+      // Mapper::map(45.4641013, 9.1897378);
+      Mapper::map(53.381128999999990000, -1.470085000000040000);
 
-      $map = GMaps::create_map();
-
-      return view('home')->with('map', $map);
+      return view('home');
     }
 }

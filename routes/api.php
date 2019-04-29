@@ -32,6 +32,7 @@ Route::put('report', 'ReportsAPIController@store');
 // Cancella segnalazione
 Route::delete('report/{id}', 'ReportsAPIController@destroy');
 
+// ____________________________
 
 // Mostra tutti gli utenti
 Route::get('users', 'UsersAPIController@index');

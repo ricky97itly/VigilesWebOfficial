@@ -14,7 +14,7 @@
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
-    <?php echo $__env->yieldContent('head_content'); ?>
+    
 </head>
 <body>
   <script src="js/sweetalert.min.js"></script>
@@ -40,7 +40,7 @@
   </div>
 
   
-  <?php echo $__env->make('inc.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
+  <?php echo $__env->make('inc.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 </html>
 <?php /**PATH /Users/masterp/Desktop/VIGILESWEB/resources/views/layouts/app.blade.php ENDPATH**/ ?>

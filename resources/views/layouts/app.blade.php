@@ -14,7 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @yield('head_content')
+    {{-- @yield('head_content') --}}
 </head>
 <body>
   <script src="js/sweetalert.min.js"></script>
@@ -40,6 +40,6 @@
   </div>
 
   {{-- Footer --}}
-  @include('inc.footer');
+  @include('inc.footer')
 </body>
 </html>

@@ -19,9 +19,8 @@ class CreateZonesTable extends Migration
             // Altri campi
             $table->string('zone', 40);
             $table->timestamps();
-
             // Questo ospita il geoJson ma nn so ancora come farlo:
-            // $table->polygon('positions');
+            $table->string('positions')->nullable();
         });
     }
 
