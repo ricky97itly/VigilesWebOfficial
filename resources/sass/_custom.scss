@@ -1,3 +1,7 @@
+#content {
+  margin-bottom: 5vh;
+}
+
 #footer {
   height: 6vh;
   padding-top: 17px;
@@ -6,6 +10,11 @@
   width: 100%;
   bottom: 0px;
   background-color: $vigilesRed;
+}
+
+#map {
+  height: 84vh;
+  width: 100%;
 }
 
 #navLogo {

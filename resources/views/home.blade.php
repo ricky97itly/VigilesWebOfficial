@@ -7,6 +7,7 @@
 @endif
 
 @section('content')
-  @include('cornford.googlmapper.map')
-  {!! Mapper::render() !!}
+  <div id="map">
+  	{!! Mapper::render() !!}
+  </div>
 @endsection

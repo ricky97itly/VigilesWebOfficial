@@ -35,8 +35,7 @@ class HomeController extends Controller
       //
       // $map = GMaps::create_map();
 
-      // Mapper::map(45.4641013, 9.1897378);
-      Mapper::map(53.381128999999990000, -1.470085000000040000);
+      Mapper::map(45.4641013, 9.1897378, ['zoom' => 15, 'center' => true, 'marker' => false, 'type' => 'TERRAIN', 'overlay' => 'TRAFFIC']);
 
       return view('home');
     }

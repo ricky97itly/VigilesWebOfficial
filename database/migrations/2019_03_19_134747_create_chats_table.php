@@ -22,7 +22,7 @@ class CreateChatsTable extends Migration
             $table->unsignedBigInteger('report_id');
             $table->foreign('report_id')->references('id')->on('reports');
             // Altri campi
-            $table->longText('messaggio');
+            $table->longText('messagge');
             $table->timestamps();
         });
     }

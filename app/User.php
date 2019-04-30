@@ -37,4 +37,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Definizione delle relazioni
+
+    // UN utente può fare MOLTI reports
+    public function reports() {
+      return $this->hasMany('App\Report');
+    }
+
+    // UN utente può avere MOLTE chat in corso
+    public function chats() {
+      return $this->hasMany('App\Chat');
+    }
 }
