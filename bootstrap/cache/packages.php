@@ -75,6 +75,17 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
+  'spatie/geocoder' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\Geocoder\\GeocoderServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Geocoder' => 'Spatie\\Geocoder\\Facades\\Geocoder',
+    ),
+  ),
   'uxweb/sweet-alert' => 
   array (
     'providers' => 
