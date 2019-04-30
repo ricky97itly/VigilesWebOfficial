@@ -162,7 +162,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Spatie\Geocoder\GeocoderServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -235,7 +234,7 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
-        'Geocoder' => Spatie\Geocoder\Facades\Geocoder::class,
+
 
     ],
 
