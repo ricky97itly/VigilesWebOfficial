@@ -24,18 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      // Mettere sta roba nel .env
-      // $config['center'] = '45.4641013,9.1897378';
-      // $config['zoom'] = '13';
-      // $config['map_height'] = '84vh';
-      // $config['map_width'] = '100%';
-      // $config['scrollwheel'] = true;
-      //
-      // GMaps::initialize($config);
-      //
-      // $map = GMaps::create_map();
-
-      Mapper::map(45.4641013, 9.1897378, ['zoom' => 15, 'center' => true, 'marker' => false, 'type' => 'TERRAIN', 'overlay' => 'TRAFFIC'])->polygon([
+      Mapper::map(45.4641013, 9.1897378, ['zoom' => 13, 'center' => true, 'marker' => false, 'type' => 'TERRAIN', 'overlay' => 'TRAFFIC'])->polygon([
                               [
                                 'longitude' => 9.193582534790039,
                                 'latitude' => 45.47957256610844
@@ -232,7 +221,7 @@ class HomeController extends Controller
                                 'longitude' => 9.193582534790039,
                                 'latitude' => 45.47957256610844
                               ]
-                          ],['strokeColor' => '#FF0000', 'strokeOpacity' => 0.1, 'strokeWeight' => 2, 'fillColor' => '#FF0000']);
+                          ],['strokeColor' => '#FF4C4C', 'strokeOpacity' => 0.1, 'strokeWeight' => 2, 'fillColor' => '#FF4C4C']);
 
       return view('home');
     }
