@@ -17,10 +17,11 @@
       
   </head>
   <body>
-    <script src="js/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     
     <?php echo $__env->make('inc.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
     <div id="app">
 
       
@@ -37,6 +38,12 @@
       <main id="content" class="<?php echo e(Request::is('/') ? '' : 'container py-4'); ?>">
         <?php echo $__env->yieldContent('content'); ?>
       </main>
+
+      
+      <div class="row">
+        <img id="colorFlow" src="<?php echo e(asset('/img/BG_Gradient.svg')); ?>" alt="color flow">
+      </div>
+
     </div>
 
     

@@ -119,11 +119,24 @@ class ProfileController extends Controller
    */
   public function destroy()
   {
-    Alert::warning('Sei sicuro di voler eliminare il tuo account?', 'Attenzione!');
+    // swal({
+    //   title: "Attenzione!",
+    //   text: "Sei sicuro di voler cancellare il tuo account Vigiles?",
+    //   icon: "warning",
+    //   buttons: "true",
+    //   dangerMode: "true",
+    // }).then($willDelete)=>{
+    //   if($willDelete) {
+    //
+    //   }
+    // }
+
+    // $user = Auth::user();
+    // dd($user);
 
     // $user = Auth::user();
     // $user->delete();
-    //
-    // return redirect('/login');
+    // return redirect('/');
+
   }
 }

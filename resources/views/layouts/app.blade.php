@@ -17,10 +17,11 @@
       {{-- @yield('head_content') --}}
   </head>
   <body>
-    <script src="js/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 
     {{-- Navbar --}}
     @include('inc.navbar')
+
     <div id="app">
 
       {{-- Sweet alert --}}
@@ -37,6 +38,12 @@
       <main id="content" class="{{ Request::is('/') ? '' : 'container py-4' }}">
         @yield('content')
       </main>
+
+      {{-- Immagine di sfondo carina --}}
+      <div class="row">
+        <img id="colorFlow" src="{{ asset('/img/BG_Gradient.svg') }}" alt="color flow">
+      </div>
+
     </div>
 
     {{-- Footer --}}

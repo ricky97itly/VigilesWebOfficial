@@ -75,3 +75,9 @@
     </div>
   </div>
 @endsection
+
+{{-- <script type="text/javascript">
+  private function confirmDelete() {
+
+  }
+</script> --}}

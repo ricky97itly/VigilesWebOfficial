@@ -1,3 +1,11 @@
+#colorFlow {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+  min-width: 100% !important;
+  height: 50% !important;
+}
+
 #content {
   margin-bottom: 5vh;
 }

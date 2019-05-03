@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="361px" viewBox="0 0 1440 361" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>BG_Gradient</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-0.7%" y="-2.9%" width="101.4%" height="105.9%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.33">
+        <g id="BGOnly-Copy" transform="translate(0.000000, -663.000000)" fill="#FF4C4C">
+            <g id="BG_Gradient" filter="url(#filter-1)" transform="translate(-29.000000, 665.000000)">
+                <path d="M17.1774469,218.200502 C200.299071,121.140712 388.548231,121.140712 581.924924,218.200502 C871.989965,363.790188 931.146373,365.34056 1182.20985,218.200502 C1349.5855,120.10713 1508.61983,126.270393 1659.31282,236.690292 L1659.31282,389.825548 L17.1774469,389.825548 L17.1774469,218.200502 Z" id="Path-14"></path>
+                <path d="M13.1319431,115.221841 C250.145168,266.556788 514.407001,266.556788 805.917442,115.221841 C1097.42788,-36.1131061 1327.34533,-36.1131061 1495.66977,115.221841 L1495.66977,408.127213 L13.1319431,408.127213 L13.1319431,115.221841 Z" id="Path-15"></path>
+                <path d="M0.837972158,138.095414 C254.134148,-45.5793388 530.766663,-45.5793388 830.735517,138.095414 C1130.70437,321.770166 1379.83998,321.770166 1578.14233,138.095414 L1578.14233,382.230663 L0.837972158,382.230663 L0.837972158,138.095414 Z" id="Path-3"></path>
+            </g>
+        </g>
+    </g>
+</svg>

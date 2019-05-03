@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="1024px" viewBox="0 0 1440 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>BG_Gradient</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-0.6%" y="-0.7%" width="101.2%" height="101.4%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BGOnly">
+            <g id="BG_Gradient" filter="url(#filter-1)" transform="translate(-283.000000, -280.000000)">
+                <rect id="SegnalazioneBG2" fill="#2E2E2E" x="283" y="280" width="1440" height="1024"></rect>
+                <path d="M271.177447,1163.2005 C454.299071,1066.14071 642.548231,1066.14071 835.924924,1163.2005 C1125.98997,1308.79019 1185.14637,1310.34056 1436.20985,1163.2005 C1603.5855,1065.10713 1762.61983,1071.27039 1913.31282,1181.69029 L1913.31282,1334.82555 L271.177447,1334.82555 L271.177447,1163.2005 Z" id="Path-14" fill-opacity="0.33" fill="#FF4C4C"></path>
+                <path d="M267.131943,1060.22184 C504.145168,1211.55679 768.407001,1211.55679 1059.91744,1060.22184 C1351.42788,908.886894 1581.34533,908.886894 1749.66977,1060.22184 L1749.66977,1353.12721 L267.131943,1353.12721 L267.131943,1060.22184 Z" id="Path-15" fill-opacity="0.33" fill="#FF4C4C"></path>
+                <path d="M254.837972,1083.09541 C508.134148,899.420661 784.766663,899.420661 1084.73552,1083.09541 C1384.70437,1266.77017 1633.83998,1266.77017 1832.14233,1083.09541 L1832.14233,1327.23066 L254.837972,1327.23066 L254.837972,1083.09541 Z" id="Path-3" fill-opacity="0.33" fill="#FF4C4C"></path>
+            </g>
+        </g>
+    </g>
+</svg>
