@@ -1771,12 +1771,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var Swal = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // Struttura dell'utente
   data: function data() {
     return {
-      users: [],
       user: {
         id: '',
         name: '',
@@ -1785,11 +1787,15 @@ var Swal = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/di
       }
     };
   },
+  // Il metodo created è particolare ed è uno dei pochi che può stare fuori dai methods, viene eseguito automaticamente al caricamento della pagina
   created: function created() {
     this.id = document.querySelector("meta[name='user-id']").getAttribute('content');
     this.fetchProfile(this.id);
   },
+  // In vue.js tutti i metodi vanno all'interno di methods: {metodo1, metodo2, ecc}
   methods: {
+    // Richiesta GET alla nostra API per trovare un solo user (quello corrente), non specifico GET perchè è quella di default
+    // ATTENZIONE: l'URL non va tra apici singoli, ma tra backticks (non so come si dice in italiano), cmq, nella tastiera italiana si scrive facendo [ option + \ ]
     fetchProfile: function fetchProfile(id) {
       var _this = this;
 
@@ -1801,21 +1807,25 @@ var Swal = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/di
         return console.log(err);
       });
     },
+    // Prima chiedo se è sicuro di voler eliminare l'account
     confirmDeleteProfile: function confirmDeleteProfile(id) {
       Swal.fire({
         title: 'Attenzione!',
         text: 'Sei sicuro di voler eliminare il tuo account?',
         type: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, keep it'
+        confirmButtonText: 'Elimina account',
+        deleteButtonText: 'Annulla'
       }).then(function (result) {
+        // Se risponde di si, faccio una richiesta DELETE alla nostra API
         if (result.value) {
           fetch("api/user/".concat(id), {
             method: 'delete'
           }).then(function (res) {
             return res.json;
-          }).then(Swal.fire('Successo!', 'Il tuo account è stato cancellato', 'success'), setTimeout(function () {
+          }).then( // Altro SWAL per dire che ha eliminato l'account con successo
+          Swal.fire('Successo!', 'Il tuo account è stato cancellato', 'success'), // Aspetto 3 secondi e lo riporto alla home, che automaticamente, per colpa del middleware, ci riporta al login
+          setTimeout(function () {
             window.location.href = '/';
           }, 3000)).catch(function (err) {
             return console.log(err);
@@ -52083,15 +52093,14 @@ if (token) {
 /*!***************************************************!*\
   !*** ./resources/js/components/ProfileDelete.vue ***!
   \***************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProfileDelete_vue_vue_type_template_id_535afa59___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProfileDelete.vue?vue&type=template&id=535afa59& */ "./resources/js/components/ProfileDelete.vue?vue&type=template&id=535afa59&");
 /* harmony import */ var _ProfileDelete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProfileDelete.vue?vue&type=script&lang=js& */ "./resources/js/components/ProfileDelete.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _ProfileDelete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _ProfileDelete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -52121,7 +52130,7 @@ component.options.__file = "resources/js/components/ProfileDelete.vue"
 /*!****************************************************************************!*\
   !*** ./resources/js/components/ProfileDelete.vue?vue&type=script&lang=js& ***!
   \****************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

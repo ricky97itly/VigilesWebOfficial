@@ -60,11 +60,10 @@
 
       <hr>
 
-
-
       <div class="row">
         <div class="col-md-6 col-sm-8 offset-md-3 offset-sm-2">
           <label for="deleteUser" class="d-flex text-vigiles justify-content-center mb-4">{{ $user->email }}</label>
+          {{-- Questo tag personalizzato (vedi app.js) carica il component ProfileDelete.vue dalla cartella js/components --}}
           <profileDelete></profileDelete>
         </div>
       </div>

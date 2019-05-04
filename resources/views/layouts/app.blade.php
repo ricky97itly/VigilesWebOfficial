@@ -28,7 +28,6 @@
       {{-- Sweet alert --}}
       @include('sweet::alert')
 
-
       {{-- Errori --}}
       @if ($errors->any())
         <div class="container mt-4">

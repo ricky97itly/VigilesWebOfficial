@@ -3,6 +3,7 @@
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      
       <?php if(Auth::check()): ?>
         <meta name="user-id" content="<?php echo e(Auth::user()->id); ?>">
       <?php endif; ?>
@@ -26,7 +27,6 @@
 
       
       <?php echo $__env->make('sweet::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
 
       
       <?php if($errors->any()): ?>
