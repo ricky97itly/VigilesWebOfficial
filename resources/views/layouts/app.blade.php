@@ -3,18 +3,18 @@
   <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      {{-- Questo metatag, che metto SOLO se sono autenticato, mi serve per passare al ProfileDelete.vue l'id dell'utente autenticato --}}
+      @if (Auth::check())
+        <meta name="user-id" content="{{ Auth::user()->id }}">
+      @endif
 
       <!-- CSRF Token -->
       <meta name="csrf-token" content="{{ csrf_token() }}">
 
       <title>Vigiles Milano | La sicurezza a portata di clic</title>
 
-      <!-- Scripts -->
-      <script src="{{ asset('js/app.js') }}" defer></script>
-
       <!-- Styles -->
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-      {{-- @yield('head_content') --}}
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -22,10 +22,12 @@
     {{-- Navbar --}}
     @include('inc.navbar')
 
+    {{-- Dic che contiene tutto il corpo dell'app --}}
     <div id="app">
 
       {{-- Sweet alert --}}
       @include('sweet::alert')
+
 
       {{-- Errori --}}
       @if ($errors->any())
@@ -48,5 +50,8 @@
 
     {{-- Footer --}}
     @include('inc.footer')
+
+    <!-- App.js -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
   </body>
 </html>

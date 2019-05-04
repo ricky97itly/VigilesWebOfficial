@@ -23,6 +23,7 @@ Route::post('/avatar', 'StorageController@avatarUpdate')->name('avatar');
 
 // I metodi del controller contenuti nell'except non vengono cagati, quindi risparmiamo memoria e nn rischiamo di chiamare tali metodi vuoti.
 Route::resource('/profile', 'StorageController')->middleware('auth')->except([
-  'create', 'show', 'store'
+  'create', 'show', 'store', 'destroy'
 ]);
+
 Route::resource('/admin', 'AdminController')->middleware('auth');

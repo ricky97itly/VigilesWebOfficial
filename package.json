@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.8.1",
-        "bootstrap-sass": "^3.4.1"
+        "bootstrap-sass": "^3.4.1",
+        "sweetalert2": "^8.10.0"
     }
 }

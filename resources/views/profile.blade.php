@@ -60,16 +60,12 @@
 
       <hr>
 
+
+
       <div class="row">
         <div class="col-md-6 col-sm-8 offset-md-3 offset-sm-2">
-          <form method="POST" action="{{ action('StorageController@destroy', $user->id) }}">
-            @csrf
-            @method('DELETE')
-            <label for="deleteUser" class="d-flex text-vigiles justify-content-center mb-4">{{ $user->email }}</label>
-            <button id="deleteUser" class="btn btn-block btn-vigiles font-weight-bold" type="submit" name="delete_user" onclick="confirmDelete()">
-              {{__('Cancella account!')}}
-            </button>
-          </form>
+          <label for="deleteUser" class="d-flex text-vigiles justify-content-center mb-4">{{ $user->email }}</label>
+          <profileDelete></profileDelete>
         </div>
       </div>
     </div>
