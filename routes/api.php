@@ -48,3 +48,8 @@ Route::put('user', 'UsersAPIController@store');
 
 // Cancella utente
 Route::delete('user/{id}', 'UsersAPIController@destroy');
+
+// ____________________________
+
+// Per login su iOS con oauth
+Route::post('login', 'LoginAPIController@store');
