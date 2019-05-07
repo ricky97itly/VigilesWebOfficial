@@ -30,7 +30,7 @@
             <a class="nav-link" href="{{ url('/notifiche') }}">Notifiche</a>
           </li>
           <li class="{{ Request::is('segnalazioni') ? 'active font-weight-bold' : '' }} nav-item">
-            <a class="nav-link" href="{{ url('/segnalazioni') }}">Segnala</a>
+            <a class="nav-link" href="{{ url('/reports') }}">Segnala</a>
           </li>
           <li class="{{ Request::is('cerca') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="{{ url('/cerca') }}">Cerca</a>

@@ -15,15 +15,14 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/notifiche', 'NotificationsController@index')->name('notifiche')->middleware('auth');
-Route::get('/segnalazioni', 'ReportsController@index')->name('segnalazioni')->middleware('auth');
 Route::get('/cerca', 'SearchController@index')->name('cerca')->middleware('auth');
-Route::get('/avatar', 'StorageController@avatarIndex')->name('avatar')->middleware('auth');
 
+Route::get('/avatar', 'StorageController@avatarIndex')->name('avatar')->middleware('auth');
 Route::post('/avatar', 'StorageController@avatarUpdate')->name('avatar');
 
-// I metodi del controller contenuti nell'except non vengono cagati, quindi risparmiamo memoria e nn rischiamo di chiamare tali metodi vuoti.
 Route::resource('/profile', 'StorageController')->middleware('auth')->except([
   'create', 'show', 'store', 'destroy'
 ]);
 
 Route::resource('/admin', 'AdminController')->middleware('auth');
+Route::resource('/reports', 'ReportsController')->middleware('auth');

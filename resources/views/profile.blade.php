@@ -40,24 +40,6 @@
         </div>
       </div>
 
-      {{-- <hr>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <div class="title-vigiles font-weight-bold">
-              Amici
-            </div>
-          </div>
-          <!-- Qui ci sarà un bel foreach per ciclare gli amicih -->
-          <div class="col-md-6 col-sm-6 rounded shadow-sm p-3">
-            <h5>Amico 1</h5>
-          </div>
-          <div class="col-md-6 col-sm-6 rounded shadow-sm p-3">
-            <h5>Amico 2</h5>
-          </div>
-        </div>
-      </div> --}}
-
       <hr>
 
       <div class="row">
@@ -70,9 +52,3 @@
     </div>
   </div>
 @endsection
-
-{{-- <script type="text/javascript">
-  private function confirmDelete() {
-
-  }
-</script> --}}

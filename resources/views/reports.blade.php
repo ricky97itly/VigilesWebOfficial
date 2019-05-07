@@ -4,9 +4,8 @@
 <div class="card">
   <div class="card-header title-vigiles font-weight-bold">Nuova segnalazione</div>
   <div class="card-body">
-    @csrf
-    @method('POST')
-    {!! Form::open(['url' => 'reports/submit']) !!}
+    {!! Form::open(['url' => 'reports']) !!}
+      @csrf
       <div class="row">
         <div class="form-group col-md-12 col-sm-12">
           {{Form::label('campioggbligatori', '* I campi contrassegnati sono obbligatori')}}
@@ -20,8 +19,8 @@
           {{Form::text('address', '', ['class' => 'form-control', 'placeholder' => 'Inserisci il tuo indirizzo'])}}
         </div>
         <div class="form-group col-md-1 col-sm-2">
-          {{Form::label('streetNumber', 'Civico *')}}
-          {{Form::text('streetNumber', '', ['class' => 'form-control', 'placeholder' => 'N'])}}
+          {{Form::label('street_number', 'Civico *')}}
+          {{Form::text('street_number', '', ['class' => 'form-control', 'placeholder' => 'N'])}}
         </div>
         <div class="form-group col-md-12 col-sm-12">
           {{Form::label('description', 'Descrizione')}}

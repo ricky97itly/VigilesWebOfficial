@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Report;
+use Auth;
 
 class ReportsController extends Controller
 {
@@ -28,7 +30,7 @@ class ReportsController extends Controller
    */
   public function create()
   {
-      //
+
   }
 
   /**
@@ -39,7 +41,14 @@ class ReportsController extends Controller
    */
   public function store(Request $request)
   {
-      //
+    $report = new Report;
+
+    $report->user_id = Auth::user()->id;
+    $report->title = $request->title;
+    $report->address = $request->address;
+    $report->street_number = $request->street_number;
+    $report->description = $request->description;
+    dd($report);
   }
 
   /**
