@@ -3861,7 +3861,6 @@ return array(
     'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
     'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
     'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
-    'UsersTableSeeder' => $baseDir . '/database/seeds/UsersTableSeeder.php',
     'UxWeb\\SweetAlert\\ConvertMessagesIntoSweetAlert' => $vendorDir . '/uxweb/sweet-alert/src/SweetAlert/ConvertMessagesIntoSweetAlert.php',
     'UxWeb\\SweetAlert\\LaravelSessionStore' => $vendorDir . '/uxweb/sweet-alert/src/SweetAlert/LaravelSessionStore.php',
     'UxWeb\\SweetAlert\\SessionStore' => $vendorDir . '/uxweb/sweet-alert/src/SweetAlert/SessionStore.php',

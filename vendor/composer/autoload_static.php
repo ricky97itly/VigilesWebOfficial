@@ -4348,7 +4348,6 @@ class ComposerStaticInit4eca5127d515d76c67b73b76b02f05e2
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
-        'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
         'UxWeb\\SweetAlert\\ConvertMessagesIntoSweetAlert' => __DIR__ . '/..' . '/uxweb/sweet-alert/src/SweetAlert/ConvertMessagesIntoSweetAlert.php',
         'UxWeb\\SweetAlert\\LaravelSessionStore' => __DIR__ . '/..' . '/uxweb/sweet-alert/src/SweetAlert/LaravelSessionStore.php',
         'UxWeb\\SweetAlert\\SessionStore' => __DIR__ . '/..' . '/uxweb/sweet-alert/src/SweetAlert/SessionStore.php',

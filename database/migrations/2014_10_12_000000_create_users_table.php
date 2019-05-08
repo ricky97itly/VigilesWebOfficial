@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password', 60);
             $table->string('address', 50);
-            $table->unsignedMediumInteger('street_number');
+            $table->unsignedSmallInteger('street_number');
             $table->string('avatar')->default('userDefault.png');
             $table->boolean('is_admin');
             $table->rememberToken();

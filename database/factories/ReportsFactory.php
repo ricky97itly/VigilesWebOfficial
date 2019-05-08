@@ -4,9 +4,9 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Report::class, function (Faker $faker) {
     return [
-        'user_id'=> $faker->numberBetween($min = 1, $max = 50),
-        'code_id'=> $faker->numberBetween($min = 1, $max = 4),
-        'zone_id'=> $faker->numberBetween($min = 1, $max = 9),
+        'user_id'=> 1,
+        'code_id'=> 1,
+        'zone_id'=> 1,
         'title' => $faker->text(30),
         'address' => $faker->text(30),
         'street_number' => $faker->randomDigitNotNull,
