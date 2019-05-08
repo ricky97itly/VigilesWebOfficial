@@ -82,7 +82,7 @@ class ReportsController extends Controller
    */
   public function show($id)
   {
-      //
+
   }
 
   /**
@@ -93,7 +93,8 @@ class ReportsController extends Controller
    */
   public function edit($id)
   {
-      //
+    $report = Report::findOrFail($id);
+    return view ('report_detail')->with('report', $report);
   }
 
   /**
@@ -105,7 +106,37 @@ class ReportsController extends Controller
    */
   public function update(Request $request, $id)
   {
-      //
+    $validator = Validator::make($request->all(), [
+      'title' => 'bail|required|string',
+      'address' => 'bail|required|string',
+      'street_number' => 'bail|required|integer',
+      'description' => 'string',
+      'tags' => 'string'
+    ]);
+
+    // Azioni conseguenti alla validazione
+    if ($validator->fails()) {
+      // ERRORE - Torna alla view precedente ritornando gli errori
+      return redirect('/reports')->withErrors($validator);
+    } else {
+      $report = Report::findOrFail($id);
+      $report->user_id = intval($request->input('user_id'));
+      $report->zone_id = 1;
+      $report->code_id = intval($request->input('code_id'));
+      $report->title = $request->input('title');
+      $report->address = $request->input('address');
+      $report->street_number = $request->input('street_number');
+      $report->description = $request->input('description');
+      $report->tags = $request->input('tags');
+      $report->media = $request->input('media');
+
+      // Salva, alert e torna alla home
+      if($report->save()) {
+        Alert::success("La segnalazione è stata aggiornata!");
+        return redirect('/');
+      }
+    }
+
   }
 
   /**

@@ -17,11 +17,11 @@ class UsersAPIController extends Controller
      */
     public function index()
     {
-        // Prende 10 segnalazioni
-        $users = User::paginate(10);
+      // Prende 10 segnalazioni
+      $users = User::paginate(10);
 
-        // Restituisce collection segnalazioni come Resource
-        return UserResource::collection($users);
+      // Restituisce collection segnalazioni come Resource
+      return UserResource::collection($users);
     }
 
     /**

@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+      $this->middleware('auth');
     }
 
     /**
@@ -224,7 +224,7 @@ class HomeController extends Controller
                               ]
                           ],['strokeColor' => '#FF4C4C', 'strokeOpacity' => 0.1, 'strokeWeight' => 2, 'fillColor' => '#FF4C4C']);
 
-      $this->addMarkers();
+      // $this->addMarkers();
 
       return view('home');
     }

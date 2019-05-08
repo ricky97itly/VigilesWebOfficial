@@ -1,15 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card">
-  <div class="card-header title-vigiles font-weight-bold">Nuova segnalazione</div>
-  <div class="card-body">
-    {!! Form::open(['url' => 'reports']) !!}
+  <div class="card">
+    <div class="card-header title-vigiles font-weight-bold">Nuova segnalazione</div>
+    <div class="card-body">
+      {!! Form::open(['url' => 'reports']) !!}
       @csrf
       <div class="row">
         <div class="form-group col-md-12 col-sm-12">
           {{Form::label('campioggbligatori', '* I campi contrassegnati sono obbligatori')}}
         </div>
+      </div>
+      <div class="row">
         <div class="form-group col-md-6 col-sm-6">
           {{Form::label('title', 'Titolo*')}}
           {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Inserisci il titolo'])}}
@@ -22,6 +24,8 @@
           {{Form::label('street_number', 'Civico*')}}
           {{Form::text('street_number', '', ['class' => 'form-control', 'placeholder' => 'N'])}}
         </div>
+      </div>
+      <div class="row">
         <div class="form-group col-md-6 col-sm-6">
           {{Form::label('description', 'Descrizione')}}
           {{Form::textarea('description', '', ['class' => 'form-control', 'placeholder' => 'Inserisci la descrizione'])}}
@@ -38,10 +42,13 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row">
         <div class="form-group text-center col-md-12 col-sm-12 mt-4">
           {{Form::submit('Invia', ['class' => 'btn btn-vigiles'])}}
         </div>
       </div>
+    </div>
     {!! Form::close() !!}
   </div>
 </div>

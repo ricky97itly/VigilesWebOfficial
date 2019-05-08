@@ -35,7 +35,7 @@
                 {{ $report->address }}, {{ $report->street_number }}
               </div>
               <div class="col-md-2 align-self-center">
-                <a class="d-flex btn btn-link-red" href="/report_detail/{{ $report->id }}">Dettagli</a>
+                <a class="d-flex btn btn-link-red" href="/reports/{{ $report->id }}/edit">Dettagli</a>
               </div>
             </div>
           </li>
