@@ -65,7 +65,8 @@ class ReportsController extends Controller
       $report->street_number = $request->input("street_number");
       $report->description = $request->input("description");
       $report->tags = $request->input("tags");
-      // dd($report);
+
+      // Salva, alert e torna alla home
       if($report->save()) {
         Alert::success("La tua segnalazione è stata inoltrata!");
         return redirect('/');

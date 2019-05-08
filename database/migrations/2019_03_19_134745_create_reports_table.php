@@ -18,7 +18,7 @@ class CreateReportsTable extends Migration
             $table->bigIncrements('id');
             // Chiavi esterne
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('code_id')->nullable();
             $table->foreign('code_id')->references('id')->on('codes');
             $table->unsignedBigInteger('zone_id');
@@ -26,7 +26,7 @@ class CreateReportsTable extends Migration
             // Altri campi
             $table->string('title', 100);
             $table->string('address');
-            $table->string('street_number')->nullable();
+            $table->unsignedMediumInteger('street_number')->nullable();
             $table->string('description', 2000)->nullable();
             $table->string('tags', 200)->nullable();
             $table->string('media', 300)->nullable();
