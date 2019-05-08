@@ -10,7 +10,6 @@
     <div class="card-body">
       <form action="/avatar" method="POST" enctype="multipart/form-data">
         @csrf
-        {{-- @method('POST') --}}
 
         <div class="form-group row mb-0">
           <div class="col-md-3 col-sm-4 align-self-center separator-right">

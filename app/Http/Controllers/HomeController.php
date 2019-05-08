@@ -223,6 +223,18 @@ class HomeController extends Controller
                               ]
                           ],['strokeColor' => '#FF4C4C', 'strokeOpacity' => 0.1, 'strokeWeight' => 2, 'fillColor' => '#FF4C4C']);
 
+      this.addMarkers();
+
       return view('home');
+    }
+
+    public function addMarkers() {
+      $reports = DB::table('reports')->select('*')->where('code_id', '!=', '1');
+
+      foreach ($reports as $report) {
+        $fullAddress = "{$report->address}, {$report->street_number}";
+        $latlng = $geocoder->getCoordinatesForAddress($fullAddress);
+        dd($latlng);
+      }
     }
 }

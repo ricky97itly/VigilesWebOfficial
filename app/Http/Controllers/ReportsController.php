@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Report;
 use Auth;
+use Alert;
+use Validator;
+use App\Report;
+use Illuminate\Http\Request;
 
 class ReportsController extends Controller
 {
@@ -41,14 +43,34 @@ class ReportsController extends Controller
    */
   public function store(Request $request)
   {
-    $report = new Report;
+    $validator = Validator::make($request->all(), [
+      'title' => 'bail|required|string',
+      'address' => 'bail|required|string',
+      'street_number' => 'bail|required|integer',
+      'description' => 'string',
+      'tags' => 'string'
+    ]);
 
-    $report->user_id = Auth::user()->id;
-    $report->title = $request->title;
-    $report->address = $request->address;
-    $report->street_number = $request->street_number;
-    $report->description = $request->description;
-    dd($report);
+    // Azioni conseguenti alla validazione
+    if ($validator->fails()) {
+      // ERRORE - Torna alla view precedente ritornando gli errori
+      return redirect('/reports')->withErrors($validator);
+    } else {
+      $report = new Report;
+      $report->user_id = Auth::user()->id;
+      $report->zone_id = 1;
+      $report->code_id = 1;
+      $report->title = $request->input("title");
+      $report->address = $request->input("address");
+      $report->street_number = $request->input("street_number");
+      $report->description = $request->input("description");
+      $report->tags = $request->input("tags");
+      // dd($report);
+      if($report->save()) {
+        Alert::success("La tua segnalazione è stata inoltrata!");
+        return redirect('/');
+      }
+    }
   }
 
   /**
