@@ -82,7 +82,9 @@ class ReportsController extends Controller
    */
   public function show($id)
   {
-
+    \Log::info('MERDA DI CAPRIOLO');
+    $report = Report::findOrFail($id);
+    return view ('report_detail')->with('report', $report);
   }
 
   /**

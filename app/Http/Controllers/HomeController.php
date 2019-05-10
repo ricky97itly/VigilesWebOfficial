@@ -240,9 +240,27 @@ class HomeController extends Controller
         $fullAddress = $report->address.", ".$report->street_number.", Milano";
         $latlng = $geocoder->getCoordinatesForAddress($fullAddress);
 
-        Mapper::informationWindow($latlng["lat"], $latlng["lng"],
-          '<h4>'.$report->title.'</h4>',);
-
+        if($report->code_id == 2) {
+          Mapper::informationWindow($latlng["lat"], $latlng["lng"], '
+            <h5>'.$report->title.'<i class="ml-2 fas text-success fa-dot-circle"></i></h5>
+            <h6 class="text-muted">'.$report->address.', '.$report->street_number.'</h6>
+            <img class="img-infowin img-thumbnail" src='.$report->media.' alt="immagine della segnalazione">
+            <p class="mt-4"><a class="link-red" href="/reports/'.$report->id.'"> Vai al dettaglio <i class="fas fa-chevron-circle-right"></i></a></p>');
+        }
+        else if($report->code_id == 3) {
+          Mapper::informationWindow($latlng["lat"], $latlng["lng"], '
+            <h5>'.$report->title.'<i class="ml-2 fas text-warning fa-dot-circle"></i></h5>
+            <h6 class="text-muted">'.$report->address.', '.$report->street_number.'</h6>
+            <img class="img-infowin img-thumbnail" src='.$report->media.' alt="immagine della segnalazione">
+            <p class="mt-4"><a class="link-red" href="/reports/'.$report->id.'"> Vai al dettaglio <i class="fas fa-chevron-circle-right"></i></a></p>');
+        }
+        else if($report->code_id == 4) {
+          Mapper::informationWindow($latlng["lat"], $latlng["lng"], '
+            <h5>'.$report->title.'<i class="ml-2 fas text-danger fa-dot-circle"></i></h5>
+            <h6 class="text-muted">'.$report->address.', '.$report->street_number.'</h6>
+            <img class="img-infowin img-thumbnail" src='.$report->media.' alt="immagine della segnalazione">
+            <p class="mt-4"><a class="link-red" href="/reports/'.$report->id.'"> Vai al dettaglio <i class="fas fa-chevron-circle-right"></i></a></p>');
+        }
       }
     }
 }

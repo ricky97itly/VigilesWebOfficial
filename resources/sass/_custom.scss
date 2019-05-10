@@ -87,6 +87,12 @@
   text-transform: capitalize;
 }
 
+.img-infowin {
+  width: 18vh;
+  height: 18vh;
+  object-fit: cover;
+}
+
 .nav-link-dropdown, .btn-link-red, .link-red {
   color: $vigilesRed;
   font-weight: 500;

@@ -213,7 +213,8 @@ return [
         | Display an animation effect for markers. (NONE|DROP|BOUNCE)
         |
         */
-        'animation' => 'NONE',
+        'animation' => 'DROP',
+        'autoClose' => 'true'
 
     ],
 
