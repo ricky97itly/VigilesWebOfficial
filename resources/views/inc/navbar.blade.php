@@ -9,7 +9,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left Side Of Navbar -->
-      @if (Auth::check() && Auth::user()->is_admin == 1)
+      @if (Auth::check() && Auth::user()->is_admin == 1 && Auth::user()->hasVerifiedEmail())
         <ul class="navbar-nav mr-auto">
           <li class="{{ Request::is('/') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="{{ url('/') }}">Home</a>
@@ -21,7 +21,7 @@
             <a class="nav-link" href="/admin">Operatore</a>
           </li>
         </ul>
-      @elseif (Auth::check())
+      @elseif (Auth::check() && Auth::user()->hasVerifiedEmail())
         <ul class="navbar-nav mr-auto">
           <li class="{{ Request::is('/') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="{{ url('/') }}">Home</a>
@@ -53,7 +53,7 @@
           </li>
           @endif
 
-          @else
+        @elseif(Auth::user()->hasVerifiedEmail())
           <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
               {{ Auth::user()->name }} <span class="caret"></span>

@@ -22,7 +22,7 @@
     switch ($level) {
         case 'success':
         case 'error':
-            $color = $level;
+            $color = $vigilesRed;
             break;
         default:
             $color = 'primary';

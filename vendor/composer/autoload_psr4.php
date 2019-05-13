@@ -50,6 +50,7 @@ return array(
     'League\\Event\\' => array($vendorDir . '/league/event/src'),
     'Lcobucci\\JWT\\' => array($vendorDir . '/lcobucci/jwt/src'),
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
+    'Laravel\\Scout\\' => array($vendorDir . '/laravel/scout/src'),
     'Laravel\\Passport\\' => array($vendorDir . '/laravel/passport/src'),
     'JakubOnderka\\PhpConsoleHighlighter\\' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor\\' => array($vendorDir . '/jakub-onderka/php-console-color/src'),

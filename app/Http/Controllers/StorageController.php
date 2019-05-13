@@ -18,7 +18,7 @@ class StorageController extends ProfileController
   public function avatarUpdate(Request $request) {
     // Validazione dei dati
     $validator = Validator::make($request->all(), [
-      'avatar' => 'bail|required|mimes:jpg,jpeg,png,svg,ttif,gif|size:51200'
+      'avatar' => 'bail|required|mimes:jpg,jpeg,png,svg,ttif,gif|between:1,2048'
     ]);
 
     // Azioni conseguenti alla validazione

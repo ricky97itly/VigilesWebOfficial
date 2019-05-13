@@ -1,5 +1,5 @@
 <template id="deleteBtn">
-  <!-- La div vuota SERVE DI BRUTTO, se proviamo a mettere il v-bind:key dà errore in compilazione -->
+  <!-- La div vuota SERVE DI BRUTTO, se proviamo a metterci il v-bind:key dà errore in compilazione -->
   <div>
     <!-- v-bind:key serve per far sapere alla div l'id dello user, cosi posso passarlo nel metodo dell'onclick -->
     <div v-bind:key="user.id">

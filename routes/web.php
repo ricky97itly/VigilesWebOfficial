@@ -11,14 +11,14 @@
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/', 'HomeController@index')->name('home')->middleware('auth', 'verified');
 Route::get('/notifiche', 'NotificationsController@index')->name('notifiche')->middleware('auth');
 Route::get('/cerca', 'SearchController@index')->name('cerca')->middleware('auth');
 
 Route::get('/avatar', 'StorageController@avatarIndex')->name('avatar')->middleware('auth');
-Route::post('/avatar', 'StorageController@avatarUpdate')->name('avatar');
+Route::post('/avatar', 'StorageController@avatarUpdate')->name('avatar')->middleware('auth');
 
 Route::resource('/profile', 'StorageController')->middleware('auth')->except([
   'create', 'show', 'store', 'destroy'

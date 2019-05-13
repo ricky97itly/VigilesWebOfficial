@@ -24,7 +24,7 @@ $factory->define(User::class, function (Faker $faker) {
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // Inverse HASH: password
         'address' => $faker->streetName,
         'street_number' => $faker->buildingNumber,
-        'avatar' => $faker->imageUrl(300, 300, 'people'),
+        'avatar' => 'userDefault.png',
         'is_admin' => 0,
         'remember_token' => Str::random(10),
     ];
