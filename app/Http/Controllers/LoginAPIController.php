@@ -53,6 +53,7 @@ class LoginAPIController extends Controller
             'confirm_password' => 'required|same:password',
             'address' => 'required',
             'street_number' => 'required',
+            'is_admin' => 'required',
         ]);
         if ($validator->fails()) {
             return response()->json(['error'=>$validator->errors()], 401);

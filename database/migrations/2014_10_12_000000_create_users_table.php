@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('address', 50);
             $table->unsignedMediumInteger('street_number');
             $table->string('avatar')->default('userDefault.png');
-            $table->boolean('is_admin');
+            $table->boolean('is_admin')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
