@@ -53,3 +53,6 @@ Route::delete('user/{id}', 'UsersAPIController@destroy');
 
 // Per login su iOS con oauth
 Route::post('login', 'LoginAPIController@store');
+
+// Per register su iOS
+Route::post('register', 'LoginAPIController@register');
