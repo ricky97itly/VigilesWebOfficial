@@ -10804,6 +10804,15 @@ li {
   list-style: none;
 }
 
+@media (min-width: 1200px) {
+  .user-for-report {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto !important;
+  }
+}
+
 /*!
  * Font Awesome Free 5.8.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)

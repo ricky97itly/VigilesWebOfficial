@@ -10,42 +10,46 @@
           @method('PUT')
           <div class="row">
             <div class="form-group col-md-6 col-sm-6">
-              {{Form::label('title', 'Titolo')}}
-              {{Form::text('title', "$report->title", ['class' => 'form-control'])}}
-            </div>
-            <div class="form-group col-md-5 col-sm-5">
-              {{Form::label('address', 'Indirizzo')}}
-              {{Form::text('address', "$report->address", ['class' => 'form-control'])}}
-            </div>
-            <div class="form-group col-md-1 col-sm-1">
-              {{Form::label('street_number', 'Civico')}}
-              {{Form::text('street_number', "$report->street_number", ['class' => 'form-control'])}}
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-md-6 col-sm-6">
-              {{Form::label('tags', 'Tags')}}
-              {{Form::text('tags', "$report->tags", ['class' => 'form-control'])}}
-            </div>
-            <div class="form-group col-md-6 col-sm-6">
-              {{Form::label('codes', 'Codice di gravità')}}
-              <div class="d-flex btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-success font-weight-bold active">
-                  <input type="radio" name="code_id" value="2" id="green" autocomplete="off" checked> Verde
-                </label>
-                <label class="btn btn-outline-warning font-weight-bold">
-                  <input type="radio" name="code_id" value="3" id="yellow" autocomplete="off"> Giallo
-                </label>
-                <label class="btn btn-outline-danger font-weight-bold">
-                  <input type="radio" name="code_id" value="4" id="red" autocomplete="off"> Rosso
-                </label>
+              <div class="row">
+                <div class="form-group col-md-12 col-sm-12">
+                  {{Form::label('title', 'Titolo')}}
+                  {{Form::text('title', "$report->title", ['class' => 'form-control'])}}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                  {{Form::label('codes', 'Codice di gravità')}}
+                  <div class="d-flex btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-success font-weight-bold active">
+                      <input type="radio" name="code_id" value="2" id="green" autocomplete="off" checked> Verde
+                    </label>
+                    <label class="btn btn-outline-warning font-weight-bold">
+                      <input type="radio" name="code_id" value="3" id="yellow" autocomplete="off"> Giallo
+                    </label>
+                    <label class="btn btn-outline-danger font-weight-bold">
+                      <input type="radio" name="code_id" value="4" id="red" autocomplete="off"> Rosso
+                    </label>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="row mt-4">
-            <div class="form-group col-md-6 col-sm-6">
-              {{Form::label('description', 'Descrizione')}}
-              {{Form::textarea('description', "$report->description", ['class' => 'form-control'])}}
+              <div class="row">
+                <div class="form-group col-md-10 col-sm-10 d-inline-block">
+                  {{Form::label('address', 'Indirizzo')}}
+                  {{Form::text('address', "$report->address", ['class' => 'form-control'])}}
+                </div>
+                <div class="form-group col-md-2 col-sm-2 d-inline-block">
+                  {{Form::label('street_number', 'Civico')}}
+                  {{Form::text('street_number', "$report->street_number", ['class' => 'form-control'])}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-12 col-sm-12">
+                  {{Form::label('tags', 'Tags')}}
+                  {{Form::text('tags', "$report->tags", ['class' => 'form-control'])}}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                  {{Form::label('description', 'Descrizione')}}
+                  {{Form::textarea('description', "$report->description", ['class' => 'form-control'])}}
+                </div>
+              </div>
             </div>
             <div class="form-group col-md-6 col-sm-6 text-center">
               <img class="img-fluid img-thumbnail" src="{{ $report->media }}" alt="Report picture">
@@ -68,50 +72,39 @@
         <form action="">
           @csrf
           <div class="row">
-            <div class="form-group col-md-6 col-sm-6">
-              {{Form::label('title', 'Titolo')}}
-              <h4>{{Form::label('title', "$report->title")}}</h4>
-            </div>
-            <div class="form-group col-md-5 col-sm-5">
-              {{Form::label('address', 'Indirizzo')}}
-              <h4>{{Form::label('address', "$report->address")}}</h4>
-            </div>
-            <div class="form-group col-md-1 col-sm-1">
-              {{Form::label('street_number', 'Civico')}}
-              <h4>{{Form::label('street_number', "$report->street_number")}}</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-md-6 col-sm-6">
-              {{Form::label('tags', 'Tags')}}
-              <h4>{{Form::label('tags', "$report->tags")}}</h4>
-            </div>
-            <div class="form-group col-md-6 col-sm-6">
-              {{Form::label('codes', 'Codice di gravità')}}
-              @if($report->code_id == 2)
-                <h4>{{Form::label('codes', 'Codice verde', ['class' => 'text-success font-weigth-bold'])}}</h4>
-              @elseif($report->code_id == 3)
-                <h4>{{Form::label('codes', 'Codice giallo', ['class' => 'text-warning font-weigth-bold'])}}</h4>
-              @elseif($report->code_id == 4)
-                <h4>{{Form::label('codes', 'Codice rosso', ['class' => 'text-danger font-weigth-bold'])}}</h4>
-              @endif
-            </div>
-          </div>
-          <div class="row mt-4">
-            <div class="form-group col-md-6 col-sm-6">
-              {{Form::label('description', 'Descrizione')}}
-              <h4>{{Form::label('description', "$report->description")}}</h4>
+            <div class="form-group align-self-stretch col-md-6 col-sm-6">
+              <div class="form-group col-md-12 col-sm-12">
+                <h2>{{Form::label('title', "$report->title")}}
+                  @if($report->code_id == 2)
+                    <i class="fas fa-frown text-success ml-2"></i>
+                  @elseif($report->code_id == 3)
+                    <i class="fas fa-exclamation-triangle text-warning ml-2"></i>
+                  @elseif($report->code_id == 4)
+                    <i class="fas fa-meteor text-danger ml-2"></i>
+                  @endif
+                </h2>
+                <h6 class="text-muted">{{Form::label('address', "$report->address, $report->street_number")}}</h6>
+              </div>
+              <div class="form-group col-md-12 col-sm-12 mt-3">
+                <h5 class="mt-4 pt-4">{{Form::label('description', "$report->description")}}</h5>
+              </div>
+              <div class="form-group col-md-12 col-sm-12">
+                <h6 class="mt-4 pt-4">{{Form::label('tags', "Tags:")}}</h6>
+                <h6 class=""><em>{{Form::label('tags', "$report->tags")}}</em></h6>
+              </div>
+              <div class="form-group col-md-12 col-sm-12 user-for-report">
+                <h6 class="mt-auto">
+                  {{Form::label('user', "Segnalato da: ")}}
+                  <em>{{Form::label('tags', "$report->user_name $report->user_surname")}}</em>
+                </h6>
+              </div>
             </div>
             <div class="form-group col-md-6 col-sm-6 text-center">
               <img class="img-fluid img-thumbnail" src="{{ $report->media }}" alt="Report picture">
             </div>
           </div>
-          <div class="row">
-            <div class="form-group text-center col-md-12 col-sm-12 mt-4">
-              <input type="hidden" name="media" value="{{ $report->media }}">
-              <input type="hidden" name="user_id" value="{{ $report->user_id }}">
-            </div>
-          </div>
+          <input type="hidden" name="media" value="{{ $report->media }}">
+          <input type="hidden" name="user_id" value="{{ $report->user_id }}">
         </form>
       </div>
     </div>

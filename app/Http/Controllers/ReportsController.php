@@ -6,6 +6,7 @@ use Auth;
 use Alert;
 use Validator;
 use App\Report;
+use App\User;
 use Illuminate\Http\Request;
 
 class ReportsController extends Controller
@@ -82,8 +83,10 @@ class ReportsController extends Controller
    */
   public function show($id)
   {
-    \Log::info('MERDA DI CAPRIOLO');
     $report = Report::findOrFail($id);
+    $user = User::where('id', $report->user_id)->firstOrFail();
+    $report->user_name = $user->name;
+    $report->user_surname = $user->surname;
     return view ('report_detail')->with('report', $report);
   }
 
