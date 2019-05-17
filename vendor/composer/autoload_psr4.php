@@ -34,6 +34,7 @@ return array(
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Symfony\\Bridge\\PsrHttpMessage\\' => array($vendorDir . '/symfony/psr-http-message-bridge'),
     'Spatie\\Geocoder\\' => array($vendorDir . '/spatie/geocoder/src'),
+    'Riimu\\Kit\\PHPEncoder\\' => array($vendorDir . '/riimu/kit-phpencoder/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src'),
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
@@ -75,4 +76,6 @@ return array(
     'BeyondCode\\DumpServer\\' => array($vendorDir . '/beyondcode/laravel-dump-server/src'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
     'App\\' => array($baseDir . '/app'),
+    'Algolia\\ScoutExtended\\' => array($vendorDir . '/algolia/scout-extended/src'),
+    'Algolia\\AlgoliaSearch\\' => array($vendorDir . '/algolia/algoliasearch-client-php/src'),
 );

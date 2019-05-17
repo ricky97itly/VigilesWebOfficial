@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Report;
 
 class SearchController extends Controller
 {
@@ -18,6 +19,7 @@ class SearchController extends Controller
    */
   public function index()
   {
+    $reports = new Report;
     return view('search');
   }
 
@@ -85,5 +87,10 @@ class SearchController extends Controller
   public function destroy($id)
   {
       //
+  }
+
+  public function search($searchKey) {
+    $reports = Report::search($searchKey)->get();
+    return view('search_result')->with('reports', $reports);
   }
 }

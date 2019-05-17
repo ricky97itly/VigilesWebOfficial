@@ -1,4 +1,11 @@
 <?php return array (
+  'algolia/scout-extended' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Algolia\\ScoutExtended\\ScoutExtendedServiceProvider',
+    ),
+  ),
   'barryvdh/laravel-debugbar' => 
   array (
     'providers' => 

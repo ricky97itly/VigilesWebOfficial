@@ -9,6 +9,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.3.3",
+        "algolia/algoliasearch-client-php": "^2.2",
+        "algolia/scout-extended": "^1.6",
         "cornford/googlmapper": "2.*",
         "fideloper/proxy": "^4.0",
         "geojson/geojson": "dev-master",

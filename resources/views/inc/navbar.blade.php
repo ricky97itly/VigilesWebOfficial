@@ -14,8 +14,8 @@
           <li class="{{ Request::is('/') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="{{ url('/') }}">Home</a>
           </li>
-          <li class="{{ Request::is('cerca') ? 'active font-weight-bold' : '' }} nav-item">
-            <a class="nav-link" href="{{ url('/cerca') }}">Cerca</a>
+          <li class="{{ Request::is('search') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/search') }}">Cerca</a>
           </li>
           <li class="{{ Request::is('admin') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="/admin">Operatore</a>
@@ -32,8 +32,8 @@
           <li class="{{ Request::is('segnalazioni') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="{{ url('/reports') }}">Segnala</a>
           </li>
-          <li class="{{ Request::is('cerca') ? 'active font-weight-bold' : '' }} nav-item">
-            <a class="nav-link" href="{{ url('/cerca') }}">Cerca</a>
+          <li class="{{ Request::is('search') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/search') }}">Cerca</a>
           </li>
         </ul>
       @endif

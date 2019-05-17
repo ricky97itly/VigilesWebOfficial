@@ -25,6 +25,8 @@ return array(
     '0b0974a5566a1077e4f2e111341112c1' => $vendorDir . '/zendframework/zend-diactoros/src/functions/normalize_server.php',
     '1ca3bc274755662169f9629d5412a1da' => $vendorDir . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
     '40360c0b9b437e69bcbb7f1349ce029e' => $vendorDir . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
+    '979dffec6fa5205cabd2c2cd1e9e6b3a' => $vendorDir . '/algolia/algoliasearch-client-php/src/Http/Psr7/functions.php',
+    '6783aef8c489bbc166eee2536fe605d5' => $vendorDir . '/algolia/algoliasearch-client-php/src/functions.php',
     '538ca81a9a966a6716601ecf48f4eaef' => $vendorDir . '/opis/closure/functions.php',
     'f0906e6318348a765ffb6eb24e0d0938' => $vendorDir . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
     '58571171fd5812e6e447dce228f52f4d' => $vendorDir . '/laravel/framework/src/Illuminate/Support/helpers.php',
