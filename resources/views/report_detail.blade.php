@@ -3,7 +3,7 @@
 @section('content')
   @if(Auth::check() && Auth::user()->is_admin == 1)
     <div class="card">
-      <div class="card-header title-vigiles font-weight-bold"><a class="link-red mb-4" href="/"><i class="fas fa-chevron-circle-left"></i> Torna alla home</a></div>
+      <div class="card-header title-vigiles font-weight-bold"><a class="link-red mb-4" href="/home"><i class="fas fa-chevron-circle-left"></i> Torna alla home</a></div>
       <div class="card-body">
         <form action="{{ action('ReportsController@update', $report->id) }}" method="post">
           @csrf
@@ -67,7 +67,7 @@
     </div>
   @elseif(Auth::check())
     <div class="card">
-      <div class="card-header title-vigiles font-weight-bold"><a class="link-red mb-4" href="/"><i class="fas fa-chevron-circle-left"></i> Torna alla home</a></div>
+      <div class="card-header title-vigiles font-weight-bold"><a class="link-red mb-4" href="/home"><i class="fas fa-chevron-circle-left"></i> Torna alla home</a></div>
       <div class="card-body">
         <form action="">
           @csrf
@@ -76,21 +76,23 @@
               <div class="form-group col-md-12 col-sm-12">
                 <h2>{{Form::label('title', "$report->title")}}
                   @if($report->code_id == 2)
-                    <i class="fas fa-frown text-success ml-2"></i>
+                    <i title="Codice verde" class="fas fa-frown text-success ml-2"></i>
                   @elseif($report->code_id == 3)
-                    <i class="fas fa-exclamation-triangle text-warning ml-2"></i>
+                    <i title="Codice giallo" class="fas fa-exclamation-triangle text-warning ml-2"></i>
                   @elseif($report->code_id == 4)
-                    <i class="fas fa-meteor text-danger ml-2"></i>
+                    <i title="Codice rosso" class="fas fa-meteor text-danger ml-2"></i>
                   @endif
                 </h2>
                 <h6 class="text-muted">{{Form::label('address', "$report->address, $report->street_number")}}</h6>
               </div>
               <div class="form-group col-md-12 col-sm-12 mt-3">
-                <h5 class="mt-4 pt-4">{{Form::label('description', "$report->description")}}</h5>
+                <h5 class="mt-2">{{Form::label('description', "$report->description")}}</h5>
               </div>
               <div class="form-group col-md-12 col-sm-12">
-                <h6 class="mt-4 pt-4">{{Form::label('tags', "Tags:")}}</h6>
-                <h6 class=""><em>{{Form::label('tags', "$report->tags")}}</em></h6>
+                <h6 class="mt-4">
+                  {{Form::label('tags', "Tags:")}}
+                  <em>{{Form::label('tags', "$report->tags")}}</em>
+                </h6>
               </div>
               <div class="form-group col-md-12 col-sm-12 user-for-report">
                 <h6 class="mt-auto">
@@ -100,7 +102,7 @@
               </div>
             </div>
             <div class="form-group col-md-6 col-sm-6 text-center">
-              <img class="img-fluid img-thumbnail" src="{{ $report->media }}" alt="Report picture">
+              <img class="img-fluid img-thumbnail" src="{{ $report->media }}" title="Immagine segnalazione" alt="Report picture">
             </div>
           </div>
           <input type="hidden" name="media" value="{{ $report->media }}">

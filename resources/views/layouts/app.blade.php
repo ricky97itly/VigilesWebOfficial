@@ -36,7 +36,7 @@
       @endif
 
       {{-- Pagine dinamiche, se è la home non voglio classi, se invece è un'altra pagina voglio class container --}}
-      <main id="content" class="{{ Request::is('/') ? '' : 'container py-4' }}">
+      <main id="content" class="{{ Request::is('home*') ? '' : 'container py-4' }}">
         @yield('content')
       </main>
 

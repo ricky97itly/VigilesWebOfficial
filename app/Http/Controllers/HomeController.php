@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Mapper;
+use App\Report;
 use Spatie\Geocoder\Geocoder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -26,7 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-      Mapper::map(45.4641013, 9.1897378, ['zoom' => 13, 'center' => true, 'marker' => false, 'type' => 'TERRAIN', 'overlay' => 'TRAFFIC'])->polygon([
+      Mapper::map(45.4641013, 9.1897378, ['zoom' => 13, 'center' => true, 'marker' => false, 'overlay' => 'TRAFFIC'])->polygon([
                               [
                                 'longitude' => 9.193582534790039,
                                 'latitude' => 45.47957256610844
@@ -231,14 +232,10 @@ class HomeController extends Controller
     }
 
     public function addMarkers() {
-      $client = new \GuzzleHttp\Client();
-      $geocoder = new Geocoder($client);
-      $geocoder->setApiKey(config('geocoder.key'));
       $reports = DB::table('reports')->select('*')->where('code_id', '!=', '1')->get();
 
       foreach ($reports as $report) {
-        $fullAddress = $report->address.", ".$report->street_number.", Milano";
-        $latlng = $geocoder->getCoordinatesForAddress($fullAddress);
+        $latlng = $this->getLatLng($report);
 
         if($report->code_id == 2) {
           Mapper::informationWindow($latlng["lat"], $latlng["lng"], '
@@ -262,5 +259,25 @@ class HomeController extends Controller
             <p class="mt-4"><a class="link-red" href="/reports/'.$report->id.'"> Vai al dettaglio <i class="fas fa-chevron-circle-right"></i></a></p>');
         }
       }
+    }
+
+    public function goToMarker($report_id) {
+      $report = Report::findOrFail($report_id);
+      $latlng = $this->getLatLng($report);
+      Mapper::map($latlng["lat"], $latlng["lng"], ['zoom' => 18, 'center' => true, 'marker' => false, 'overlay' => 'TRAFFIC']);
+
+      $this->addMarkers();
+
+      return view ('home');
+    }
+
+    public function getLatLng($report) {
+      $client = new \GuzzleHttp\Client();
+      $geocoder = new Geocoder($client);
+      $geocoder->setApiKey(config('geocoder.key'));
+
+      $fullAddress = $report->address.", ".$report->street_number.", Milano";
+      $latlng = $geocoder->getCoordinatesForAddress($fullAddress);
+      return $latlng;
     }
 }

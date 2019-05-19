@@ -5,7 +5,7 @@
     <div class="card-header ">
       <div class="title-vigiles font-weight-bold">
         {{__('Profilo')}}
-        <a class="link-red" href="/profile/{{ $user->id }}/edit"><i class="fa fa-pen"></i></a>
+        <a class="link-red" href="/profile/{{ $user->id }}/edit"><i class="btn btn-vigiles-sm fa fa-pen"></i></a>
       </div>
     </div>
     <div class="card-body">

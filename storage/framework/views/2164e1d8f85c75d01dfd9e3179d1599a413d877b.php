@@ -36,7 +36,7 @@
       <?php endif; ?>
 
       
-      <main id="content" class="<?php echo e(Request::is('/') ? '' : 'container py-4'); ?>">
+      <main id="content" class="<?php echo e(Request::is('home*') ? '' : 'container py-4'); ?>">
         <?php echo $__env->yieldContent('content'); ?>
       </main>
 

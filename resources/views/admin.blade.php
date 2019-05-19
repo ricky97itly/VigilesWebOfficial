@@ -43,7 +43,7 @@
     </ul>
   @else
     <div class="jumbotron">
-      <h6 class="text-center text-muted">Nessuna segnalazione! stanno tutti bene <i class="fa fa-laugh-beam"></i> </h6>
+      <h4 class="text-center text-muted">Nessuna segnalazione! stanno tutti bene <i class="fa fa-laugh-beam"></i> </h4>
     </div>
   @endif
 

@@ -11,20 +11,22 @@
       <!-- Left Side Of Navbar -->
       @if (Auth::check() && Auth::user()->is_admin == 1 && Auth::user()->hasVerifiedEmail())
         <ul class="navbar-nav mr-auto">
-          <li class="{{ Request::is('/') ? 'active font-weight-bold' : '' }} nav-item">
-            <a class="nav-link" href="{{ url('/') }}">Home</a>
-          </li>
-          <li class="{{ Request::is('search') ? 'active font-weight-bold' : '' }} nav-item">
-            <a class="nav-link" href="{{ url('/search') }}">Cerca</a>
+          <li class="{{ Request::is('home') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/home') }}">Home</a>
           </li>
           <li class="{{ Request::is('admin') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="/admin">Operatore</a>
           </li>
+          <form class="form-inline">
+            @csrf
+            <input class="form-control mr-sm-2" type="search" placeholder="Cerca" aria-label="Cerca">
+            <button class="btn btn-search" type="submit"><i class="fas fa-search"></i></button>
+          </form>
         </ul>
       @elseif (Auth::check() && Auth::user()->hasVerifiedEmail())
         <ul class="navbar-nav mr-auto">
-          <li class="{{ Request::is('/') ? 'active font-weight-bold' : '' }} nav-item">
-            <a class="nav-link" href="{{ url('/') }}">Home</a>
+          <li class="{{ Request::is('home') ? 'active font-weight-bold' : '' }} nav-item">
+            <a class="nav-link" href="{{ url('/home') }}">Home</a>
           </li>
           <li class="{{ Request::is('notifiche') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="{{ url('/notifiche') }}">Notifiche</a>
@@ -32,9 +34,11 @@
           <li class="{{ Request::is('segnalazioni') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="{{ url('/reports') }}">Segnala</a>
           </li>
-          <li class="{{ Request::is('search') ? 'active font-weight-bold' : '' }} nav-item">
-            <a class="nav-link" href="{{ url('/search') }}">Cerca</a>
-          </li>
+          <form class="form-inline ml-4" action="{{ action('SearchController@search')}}" method="get">
+            @csrf
+            <input class="form-control mr-sm-2" name="searchKey" type="search" placeholder="Cerca" title="Cerca un indirizzo, un tag o altre parole chiave">
+            <button class="btn nav-link" type="submit"><i class="fas fa-search"></i></button>
+          </form>
         </ul>
       @endif
 

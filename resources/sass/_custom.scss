@@ -54,6 +54,49 @@
   border: 2px solid $vigilesRed;
 }
 
+.btn-vigiles-w {
+  border-radius: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: $vigilesRed;
+}
+
+.btn-vigiles-w:hover {
+  border-radius: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: #fff;
+  background-color: $vigilesRed;
+  border: 2px solid #fff;
+}
+
+.btn-vigiles-sm {
+  border-radius: 40px;
+  color: #fff;
+  border: 2px solid $vigilesRed;
+}
+
+.btn-vigiles-sm:hover {
+  border-radius: 40px;
+  color: $vigilesRed;
+  background-color: #fff;
+  border: 2px solid $vigilesRed;
+}
+
+.btn-vigiles-sm-w {
+  border-radius: 40px;
+  color: $vigilesRed;
+  border: 2px solid $vigilesRed;
+}
+
+
+.btn-vigiles-sm-w:hover {
+  border-radius: 40px;
+  color: #fff;
+  background-color: $vigilesRed;
+  border: 2px solid #fff;
+}
+
 .btn-vigiles-circle {
   border-radius: 100%;
   padding-left: 22px;
@@ -79,7 +122,7 @@
   border: 2px solid $vigilesRed;
 }
 
-.bg-vigiles, .btn-vigiles, .btn-vigiles-circle {
+.bg-vigiles, .btn-vigiles, .btn-vigiles-sm, .btn-vigiles-circle, .btn-search {
   background-color: $vigilesRed;
 }
 
@@ -131,8 +174,6 @@
 .title-vigiles {
   font-size: 20px;
 }
-
-
 
 li {
   list-style: none;
