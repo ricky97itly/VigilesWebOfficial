@@ -3,7 +3,9 @@
 @section('content')
   @if(Auth::check() && Auth::user()->is_admin == 1)
     <div class="card">
-      <div class="card-header title-vigiles font-weight-bold"><a class="link-red mb-4" href="/home"><i class="fas fa-chevron-circle-left"></i> Torna alla home</a></div>
+      <div class="card-header title-vigiles font-weight-bold">
+        <a class="link-red mb-4" href="/home"><i class="fas fa-chevron-circle-left"></i> Torna alla home</a>
+      </div>
       <div class="card-body">
         <form action="{{ action('ReportsController@update', $report->id) }}" method="post">
           @csrf
@@ -67,7 +69,10 @@
     </div>
   @elseif(Auth::check())
     <div class="card">
-      <div class="card-header title-vigiles font-weight-bold"><a class="link-red mb-4" href="/home"><i class="fas fa-chevron-circle-left"></i> Torna alla home</a></div>
+      <div class="card-header title-vigiles font-weight-bold">
+        <a class="link-red" href="/home"><i class="fas fa-chevron-circle-left"></i> Torna alla home</a>
+        <a class="link-red float-right" href="/home/{{ $report->id }}">Vedi sulla mappa <i class="fas fa-chevron-circle-right"></i> </a>
+      </div>
       <div class="card-body">
         <form action="">
           @csrf

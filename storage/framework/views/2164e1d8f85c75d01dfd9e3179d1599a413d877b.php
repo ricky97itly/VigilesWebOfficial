@@ -50,8 +50,10 @@
     
     <?php echo $__env->make('inc.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <!-- App.js -->
+    <!-- JS -->
+    
     <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
+    
   </body>
 </html>
 <?php /**PATH /Users/masterp/Desktop/VIGILESWEB/resources/views/layouts/app.blade.php ENDPATH**/ ?>
