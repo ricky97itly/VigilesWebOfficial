@@ -23,7 +23,7 @@
         </div>
 
         <!-- Opzioni -->
-        <div class="col-md-4 offset-md-1 col-sm-4 h-100 align-self-center">
+        {{-- <div class="col-md-4 offset-md-1 col-sm-4 h-100 align-self-center">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Notifiche solo per codici
               <input class="checkbox-circle checkbox-green" type="checkbox" name="green" value="green">
@@ -37,7 +37,7 @@
               <input class="checkbox-circle" type="checkbox" name="stop_notifications" value="stop_notifications">
             </li>
           </ul>
-        </div>
+        </div> --}}
       </div>
 
       <hr>

@@ -36,7 +36,7 @@
               </div>
               <div class="col-md-2 align-self-center">
                 <a class="d-flex btn btn-link-red" href="/reports/{{ $report->id }}/edit">Dettagli</a>
-
+                {{-- Lo useremo per sweetalert --}}
                 <reportDelete></reportDelete>
                 {{-- Il form ha come action quella di cancellare il report in question --}}
                 <form action="{{action('ReportsController@destroy', $report->id)}}" method="post">
