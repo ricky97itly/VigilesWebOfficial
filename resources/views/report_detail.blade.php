@@ -62,6 +62,7 @@
               <input type="hidden" name="media" value="{{ $report->media }}">
               <input type="hidden" name="user_id" value="{{ $report->user_id }}">
               {{Form::submit('Invia', ['class' => 'btn btn-vigiles'])}}
+              {{-- {{Form::delete('Chiudi', ['class' => 'btn btn-vigiles'])}} --}}
             </div>
           </div>
         </form>

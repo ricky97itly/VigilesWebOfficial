@@ -26,7 +26,7 @@ Route::resource('/profile', 'StorageController')->middleware('auth')->except([
 ]);
 
 Route::resource('/reports', 'ReportsController')->middleware('auth')->except([
-  'create', 'destroy'
+  'create'
 ]);
 
 Route::resource('/admin', 'AdminController')->middleware('auth');

@@ -21,6 +21,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('profiledelete', require('./components/ProfileDelete.vue').default);
+Vue.component('reportDelete', require('./components/ReportDelete.vue').default);
 
 Vue.component(
     'passport-clients',

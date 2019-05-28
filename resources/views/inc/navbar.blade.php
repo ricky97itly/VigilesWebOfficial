@@ -17,7 +17,7 @@
           <li class="{{ Request::is('admin') ? 'active font-weight-bold' : '' }} nav-item">
             <a class="nav-link" href="/admin">Operatore</a>
           </li>
-          <form class="form-inline">
+          <form class="form-inline" action="{{ action('SearchController@search')}}" method="get">
             @csrf
             <input class="form-control mr-sm-2" type="search" placeholder="Cerca" aria-label="Cerca">
             <button class="btn btn-search" type="submit"><i class="fas fa-search"></i></button>

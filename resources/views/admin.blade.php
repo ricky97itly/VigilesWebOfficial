@@ -36,6 +36,14 @@
               </div>
               <div class="col-md-2 align-self-center">
                 <a class="d-flex btn btn-link-red" href="/reports/{{ $report->id }}/edit">Dettagli</a>
+
+                <reportDelete></reportDelete>
+                <form action="{{action('ReportsController@destroy', $report->id)}}" method="post">
+                    @csrf
+                    <input name="_method" type="hidden" value="DELETE">
+                    <button class="d-flex btn btn-link-red" type="submit" name="close">Chiudi</button>
+                </form>
+
               </div>
             </div>
           </li>

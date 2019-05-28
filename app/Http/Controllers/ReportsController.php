@@ -152,6 +152,9 @@ class ReportsController extends Controller
    */
   public function destroy($id)
   {
-      //
+      //con findOrFail mi trova l'elemento, se non c'è esce errore
+      $reports = Report::findOrFail($id);
+      $reports->delete();
+      return back();
   }
 }
