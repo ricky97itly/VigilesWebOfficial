@@ -38,9 +38,14 @@
                 <a class="d-flex btn btn-link-red" href="/reports/{{ $report->id }}/edit">Dettagli</a>
 
                 <reportDelete></reportDelete>
+                {{-- Il form ha come action quella di cancellare il report in question --}}
                 <form action="{{action('ReportsController@destroy', $report->id)}}" method="post">
+                    {{-- CSRF è token generato in automatico da Laravel per ogni sessione utente attiva gestita dall'applicazione. Il token viene utilizzato per verificare che l'utente autenticato sia quello che sta effettivamente effettuando le richieste all'applicazione.
+                    Nei form va sempre messo in modo che sia possibile validare la richiesta --}}
                     @csrf
-                    <input name="_method" type="hidden" value="DELETE">
+                    {{-- Viene dato all'input valore delete --}}
+                    {{-- Vedi controller  --}}
+                    <input name="_method" type="hidden" value="DELETE"></input>
                     <button class="d-flex btn btn-link-red" type="submit" name="close">Chiudi</button>
                 </form>
 
