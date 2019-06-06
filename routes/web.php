@@ -21,7 +21,6 @@ Route::get('', function () {
     return redirect('/home');
 });
 
-
 Route::get('/avatar', 'StorageController@avatarIndex')->name('avatar')->middleware('auth');
 Route::post('/avatar', 'StorageController@avatarUpdate')->name('avatar')->middleware('auth');
 
