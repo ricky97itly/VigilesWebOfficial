@@ -11,6 +11,9 @@
       <!-- CSRF Token -->
       <meta name="csrf-token" content="{{ csrf_token() }}">
 
+      <!-- Favicon -->
+      <link rel="icon" href="{{ asset('img/RW.png') }}"/>
+      
       <title>Vigiles Milano | La sicurezza a portata di clic</title>
 
       <!-- Styles -->
