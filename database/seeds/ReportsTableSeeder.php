@@ -12,7 +12,7 @@ class ReportsTableSeeder extends Seeder
   public function run()
   {
     factory(App\Report::class, 5)->create();
-    
+
     DB::table('reports')->insert([
       'user_id'=> 3,
       'code_id'=> 3,
@@ -43,6 +43,8 @@ class ReportsTableSeeder extends Seeder
       'zone_id'=> 2,
       'title' => "Ho perso il gatto",
       'address' => "Via innocenzo isimbardi",
+      'latitude' => "45.432890",
+      'longitude' => "9.180479",
       'street_number' => 54,
       'description' => "Il mio gatto è scappato vi prego trovatelo se no stommale",
       'tags'=> "gatto, scappato, stommale",

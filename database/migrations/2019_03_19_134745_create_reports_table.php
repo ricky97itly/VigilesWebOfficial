@@ -26,6 +26,8 @@ class CreateReportsTable extends Migration
             // Altri campi
             $table->string('title', 100);
             $table->string('address');
+            $table->float('latitude')->default(45.432890);
+            $table->float('longitude')->default(9.180479);
             $table->unsignedMediumInteger('street_number')->nullable();
             $table->string('description', 2000)->nullable();
             $table->string('tags', 200)->nullable();
