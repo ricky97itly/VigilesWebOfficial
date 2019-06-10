@@ -32,6 +32,12 @@ Route::put('report', 'ReportsAPIController@store');
 // Cancella segnalazione
 Route::delete('report/{id}', 'ReportsAPIController@destroy');
 
+// Invia un msg da mobile
+Route::post('report/{report}/message', 'ChatController@receive');
+
+// Ottieni lista msg
+Route::get('report/{report}/messages', 'ChatController@listMessages');
+
 // ____________________________
 
 // Mostra tutti gli utenti

@@ -46,7 +46,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
     // UN utente può avere MOLTE chat in corso
-    public function chats() {
-      return $this->hasMany('App\Chat');
-    }
+    // public function chats() {
+    //   return $this->hasMany('App\Chat');
+    // }
 }

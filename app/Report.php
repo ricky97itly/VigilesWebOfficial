@@ -35,7 +35,12 @@ class Report extends Model
   }
 
   // UN report può avere UNA sola chat
-  public function chat() {
-    return $this->hasOne('App\Chat');
+  // public function chat() {
+  //   return $this->hasOne('App\Chat');
+  // }
+
+  public function messages()
+  {
+    return $this->hasMany('App\Messages');
   }
 }
