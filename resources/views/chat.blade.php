@@ -4,7 +4,7 @@
   <div class="container">
       <div class="row">
         <div class="col-12">
-          <button type="button" class="btn btn-danger btn-block btn-lg" data-toggle="modal" data-target="#reply">
+          <button type="button" class="btn btn-danger btn-block btn-lg chatBtn" data-toggle="modal" data-target="#reply">
             Scrivi un messaggio
           </button>
 
@@ -25,8 +25,8 @@
                     <textarea name="message" class="form-control" rows="8"></textarea>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
-                    <button type="submit" class="btn btn-primary">Invia</button>
+                    <button type="button" class="btn btn-secondary chatBtn" data-dismiss="modal">Chiudi</button>
+                    <button type="submit" class="btn btn-primary  chatBtn">Invia</button>
                   </div>
                 </form>
               </div>
@@ -41,8 +41,8 @@
         <div class="row d-flex mb-4">
           @if ($message->sender_id == $report->user_id)
             <div class="col-4 mr-auto">
-              <div class="card bg-white text-dark">
-                <div class="card-body p-2">
+              <div class="card text-dark">
+                <div class="card-body p-2 chatReceive">
                   <p>{{ $message->message }}</p>
                   <p class="text-right mb-0"><small>{{ $message->created_at }}</small></p>
                 </div>
@@ -50,8 +50,8 @@
             </div>
           @else
             <div class="col-4 ml-auto">
-              <div class="card bg-danger text-white">
-                <div class="card-body p-2">
+              <div class="card">
+                <div class="card-body p-2 chatSend">
                   <p>{{ $message->message }}</p>
                   <p class="text-right mb-0"><small>{{ $message->created_at }}</small></p>
                 </div>

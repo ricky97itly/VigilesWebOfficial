@@ -2,12 +2,8 @@
   <!-- La div vuota SERVE DI BRUTTO, se proviamo a metterci il v-bind:key dà errore in compilazione -->
   <div>
     <!-- v-bind:key serve per far sapere alla div l'id dello user, cosi posso passarlo nel metodo dell'onclick -->
-    <div v-bind:key="report.id">
-        <form action="{{action('ReportsController@destroy', $report->id)}}" method="post">
-            @csrf
-            <input name="_method" type="hidden" value="DELETE">
-            <button class="d-flex btn btn-link-red" type="submit" name="close" @click = "confirmDeleteReport(report.id)">Chiudi</button>
-        </form>
+    <div v-bind:key="user.id">
+      <button class="btn btn-vigiles btn-block font-weigth-bold" @click="confirmDeleteProfile(user.id)">Cancella account</button>
     </div>
   </div>
 </template>
@@ -30,15 +26,15 @@
 
     // Il metodo created è particolare ed è uno dei pochi che può stare fuori dai methods, viene eseguito automaticamente al caricamento della pagina
     created() {
-      this.id = document.querySelector("meta[name='report-id']").getAttribute('content');
-      this.fetchReport(this.id);
+      this.id = document.querySelector("meta[name='user-id']").getAttribute('content');
+      this.fetchProfile(this.id);
     },
 
     // In vue.js tutti i metodi vanno all'interno di methods: {metodo1, metodo2, ecc}
     methods: {
       // Richiesta GET alla nostra API per trovare un solo user (quello corrente), non specifico GET perchè è quella di default
       // ATTENZIONE: l'URL non va tra apici singoli, ma tra backticks (non so come si dice in italiano), cmq, nella tastiera italiana si scrive facendo [ option + \ ]
-      fetchReport(id) {
+      fetchProfile(id) {
         fetch(`/api/user/${id}`)
         .then(res => res.json())
         .then(res => {
