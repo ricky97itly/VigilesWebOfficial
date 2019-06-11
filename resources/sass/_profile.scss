@@ -1,0 +1,22 @@
+#navLogo {
+  width: 60%;
+  height: 60%;
+}
+
+#navbar {
+  font-size: 16px;
+}
+
+.nav-link-dropdown, .btn-link-red, .link-red {
+  color: $vigilesRed;
+  font-weight: 500;
+}
+
+.nav-link-dropdown:hover, .btn-link-red:hover, .btn-link-red:active, .nav-link:hover, .link-red:hover {
+  color: $vigilesRed;
+  text-indent: 7px;
+  font-weight: 600;
+  transition: text-indent 1s;
+  text-decoration: none;
+  outline: none;
+}
