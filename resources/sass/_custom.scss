@@ -189,7 +189,7 @@
 
 .chatSend {
     background-color: $vigilesWhite;
-    border-color: $vigilesRed;
+    border-color: black;
     color: black;
     transition: $transition;
     border-radius: 15px;
@@ -202,9 +202,6 @@
     }
 }
 
-.card {
-    border: none;
-}
 .chatReceive {
     background-color: $vigilesRed;
     color: white;

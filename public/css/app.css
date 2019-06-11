@@ -10859,7 +10859,7 @@ a.text-dark:focus {
 
 .chatSend {
   background-color: #F8F9FB;
-  border-color: #ff4c4c;
+  border-color: black;
   color: black;
   transition: 0.5s all;
   border-radius: 15px;
@@ -10871,10 +10871,6 @@ a.text-dark:focus {
   color: white;
   border-radius: 20px;
   transition: 0.5s all;
-}
-
-.card {
-  border: none;
 }
 
 .chatReceive {
