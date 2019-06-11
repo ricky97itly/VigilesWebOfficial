@@ -25,6 +25,7 @@
         "vue-template-compiler": "^2.6.8"
     },
     "dependencies": {
+        "axios": ">=0.18.1",
         "@fortawesome/fontawesome-free": "^5.8.1",
         "algoliasearch": "^3.33.0",
         "bootstrap-sass": "^3.4.1",
