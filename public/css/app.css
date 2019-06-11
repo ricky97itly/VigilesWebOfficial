@@ -10851,7 +10851,7 @@ a.text-dark:focus {
 }
 
 .chatBtn:hover {
-  background-color: white;
+  background-color: #F8F9FB;
   border-color: #ff4c4c;
   color: #ff4c4c;
   transition: 0.5s all;
