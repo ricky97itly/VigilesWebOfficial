@@ -50,29 +50,5 @@ class ReportsTableSeeder extends Seeder
       'tags'=> "gatto, scappato, stommale",
       'media'=> "http://lorempixel.com/output/cats-q-c-640-480-5.jpg"
     ]);
-
-    DB::table('reports')->insert([
-      'user_id'=> 46,
-      'code_id'=> 3,
-      'zone_id'=> 7,
-      'title' => "Rapina senza feriti",
-      'address' => "Via nicola palmieri",
-      'street_number' => 39,
-      'description' => "Furto alla gioielleri, nessun ferito fortunatamente, la polizia è sul luogo",
-      'tags'=> "Furto, gioielleria, polizia",
-      'media'=> "http://lorempixel.com/output/cats-q-c-640-480-6.jpg"
-    ]);
-
-    DB::table('reports')->insert([
-      'user_id'=> 7,
-      'code_id'=> 2,
-      'zone_id'=> 4,
-      'title' => "Lavori in corso",
-      'address' => "Piazza agrippa",
-      'street_number' => 2,
-      'description' => "Una corsia bloccata in piazza agrippa dovuta a lavori sulla rete idrica",
-      'tags'=> "Lavori, rete, idrica, acqua, strada, bloccata",
-      'media'=> "http://lorempixel.com/output/cats-q-c-640-480-1.jpg"
-    ]);
   }
 }
