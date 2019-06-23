@@ -4,7 +4,7 @@
   <div class="card">
     <div class="card-header title-vigiles font-weight-bold">Nuova segnalazione</div>
     <div class="card-body">
-      {!! Form::open(['url' => 'reports']) !!}
+      {!! Form::open(['url' => 'reports', 'enctype' => 'multipart/form-data']) !!}
       @csrf
       <div class="row">
         <div class="form-group col-md-12 col-sm-12">
@@ -37,8 +37,10 @@
               {{Form::text('tags', '', ['class' => 'form-control', 'placeholder' => 'Inserisci tag per la ricerca'])}}
             </div>
             <div class="form-group col-md-12 col-sm-12 text-center mt-4">
-              {{Form::label('media', 'Aggiungi foto o video')}} <br>
-              {{Form::button('<i class="fa fa-plus"></i>', ['class' => 'btn btn-vigiles-circle'])}}
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="media" id="foto-upload">
+                    <label class="custom-file-label text-left" for="media">Clicca per selezionare un file</label>
+                </div>
             </div>
           </div>
         </div>
@@ -53,3 +55,12 @@
   </div>
 </div>
 @endsection
+
+@push('script')
+    <script src="{{ asset('js/bs-custom-file-input.js') }}" defer></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
+@endpush

@@ -1,4 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/bs-custom-file-input.js": "/js/bs-custom-file-input.js",
+    "/js/bs-custom-file-input.js.map": "/js/bs-custom-file-input.js.map"
 }

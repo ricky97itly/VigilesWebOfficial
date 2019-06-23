@@ -13,7 +13,7 @@
 
       <!-- Favicon -->
       <link rel="icon" href="{{ asset('img/RW.png') }}"/>
-      
+
       <title>Vigiles Milano | La sicurezza a portata di clic</title>
 
       <!-- Styles -->
@@ -56,7 +56,8 @@
     <!-- JS -->
     {{-- <script src="https://cdn.jsdelivr.net/npm/algoliasearch@3.32.1/dist/algoliasearchLite.js" integrity="sha256-pMaJf0I78weeXGkRMBDO6jSulxC/q3sb0aPdtV2N8n0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@3.2.0" integrity="sha256-/8usMtTwZ01jujD7KAZctG0UMk2S2NDNirGFVBbBZCM=" crossorigin="anonymous"></script> --}}
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     {{-- <script src="{{ asset('js/algolia.js') }}" defer></script> --}}
+    @stack('script')
   </body>
 </html>

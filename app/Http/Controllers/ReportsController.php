@@ -67,6 +67,11 @@ class ReportsController extends Controller
       $report->description = $request->input("description");
       $report->tags = $request->input("tags");
 
+      if ($request->hasFile('media') && $request->file('media')->isValid()) {
+        $path = $request->media->store('reports/images');
+        $report->media = url($path);
+      }
+
       // Salva, alert e torna alla home
       if($report->save()) {
         Alert::success("La tua segnalazione è stata inoltrata!");

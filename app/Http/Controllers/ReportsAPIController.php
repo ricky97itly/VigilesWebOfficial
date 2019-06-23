@@ -17,7 +17,7 @@ class ReportsAPIController extends Controller
     public function index()
     {
         // Prende 10 segnalazioni
-        $reports = Report::paginate(20);
+        $reports = Report::paginate(10);
 
         // Restituisce collection segnalazioni come Resource
         return ReportResource::collection($reports);

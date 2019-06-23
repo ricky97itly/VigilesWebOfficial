@@ -11,5 +11,11 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.autoload({
+  jquery: ['$', 'window.jQuery', 'jQuery']
+});
+
 mix.js('resources/js/app.js', 'public/js')
+   .copy('node_modules/bs-custom-file-input/dist/bs-custom-file-input.js', 'public/js')
+   .copy('node_modules/bs-custom-file-input/dist/bs-custom-file-input.js.map', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
