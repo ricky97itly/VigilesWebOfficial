@@ -27,6 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+      // Da qui si crea geoJSON con array al cui interno ci sono lat e long
+      // Mapper::map è per mappa, inserite coordinate di Milano con zoom e mappa che si apre al centro senza marker di default
       Mapper::map(45.4641013, 9.1897378, ['zoom' => 13, 'center' => true, 'marker' => false, 'overlay' => 'TRAFFIC'])->polygon([
                               [
                                 'longitude' => 9.193582534790039,
@@ -224,19 +226,26 @@ class HomeController extends Controller
                                 'longitude' => 9.193582534790039,
                                 'latitude' => 45.47957256610844
                               ]
+                              // Riempimento zona geoJSON
                           ],['strokeColor' => '#FF4C4C', 'strokeOpacity' => 0.1, 'strokeWeight' => 2, 'fillColor' => '#FF4C4C']);
 
+      // Aggiunta marker che vanno sulla home
       $this->addMarkers();
 
       return view('home');
     }
 
+   // Funzione per aggiunta marker
     public function addMarkers() {
+      // Si richiama reports che prende segnalazioni pending
       $reports = DB::table('reports')->select('*')->where('code_id', '!=', '1')->get();
 
+      // per aggiungere marker
       foreach ($reports as $report) {
+        // si prendono lat e long
         $latlng = $this->getLatLng($report);
 
+        // Suddivisione codici, si parte da 2 perché 1 è pending
         if($report->code_id == 2) {
           Mapper::informationWindow($latlng["lat"], $latlng["lng"], '
             <h5>'.$report->title.'<i class="ml-2 fas text-success fa-dot-circle"></i></h5>
@@ -261,7 +270,9 @@ class HomeController extends Controller
       }
     }
 
+    // Per andare al marker
     public function goToMarker($report_id) {
+      // findOrFail è come find, ma ha funzione in più di mostrare schermata report non trovato se non trova nessun report id, non mandando così l'app in crash
       $report = Report::findOrFail($report_id);
       $latlng = $this->getLatLng($report);
       Mapper::map($latlng["lat"], $latlng["lng"], ['zoom' => 18, 'center' => true, 'marker' => false, 'overlay' => 'TRAFFIC']);
@@ -270,13 +281,15 @@ class HomeController extends Controller
 
       return view ('home');
     }
-
+    // Per convertire lat e long in indirizzo usando geocoder
     public function getLatLng($report) {
       $client = new \GuzzleHttp\Client();
       $geocoder = new Geocoder($client);
       $geocoder->setApiKey(config('geocoder.key'));
 
+      // Città è solo MIlano
       $fullAddress = $report->address.", ".$report->street_number.", Milano";
+      // Prende coordinate da lat e long
       $latlng = $geocoder->getCoordinatesForAddress($fullAddress);
       return $latlng;
     }

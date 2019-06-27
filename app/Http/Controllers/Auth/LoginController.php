@@ -26,7 +26,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-
+     
+     /** se utente registrato può andare alla home */
     protected function authenticated(Request $request, $user)
     {
       return redirect('/home')->with('user', $user);

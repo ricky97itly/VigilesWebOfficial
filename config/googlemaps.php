@@ -11,6 +11,7 @@ return [
     /* =====================================================================
     General
     ===================================================================== */
+    // API KEY 
     'key' => 'AIzaSyD8_eQdkzdJr48WFaoPnrGCWWopzU_rOck', //Get API key: https://code.google.com/apis/console
     'adsense_publisher_id' => '', //Google AdSense publisher ID
 

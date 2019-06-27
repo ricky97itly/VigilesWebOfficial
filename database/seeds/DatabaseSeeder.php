@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
   */
   public function run()
   {
+    // Riempie DB con faker creati in precedenza
     $this->call([
       UsersTableSeeder::class,
       CodesTableSeeder::class,

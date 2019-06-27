@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Report;
 use App\Messages;
 
+/** PER OPERATORE */
 class ChatViewController extends Controller
 {
   /**
@@ -27,6 +28,7 @@ class ChatViewController extends Controller
      */
     public function sendMessage(Report $report, Request $request)
     {
+      /** Parametri necessari per invio messaggio */
         if(! empty($report->id)) {
           $message = new Messages;
           $message->sender_id = $request->user()->id;
@@ -48,6 +50,7 @@ class ChatViewController extends Controller
      */
     public function listChats(Request $request)
     {
+      /** Per fare apparire ad utente lista chat */
         $reports = Report::where('user_id', $request->user()->id)->whereHas('messages')->get();
         return view('chat-list-utente', compact('reports'));
     }
@@ -61,6 +64,7 @@ class ChatViewController extends Controller
      */
     public function messagesInReport(Report $report, Request $request)
     {
+      // Mostra interfaccia chat utente 
         return view('userChat', compact('report'));
     }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Report;
 use App\Messages;
 
+/** PER UTENTE */
 class ChatController extends Controller
 {
     /**
@@ -13,9 +14,11 @@ class ChatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     /** Lista messaggi che vede utente */
     public function listMessages(Request $request)
     {
-
+      /** Vuota perché si riempie quando operatore scrive ad utente */
     }
 
     /**
@@ -23,6 +26,8 @@ class ChatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     /** Verifica se parametri sono giusti per poter ricevere messaggio */
     public function receive(Report $report, Request $request)
     {
       if(! empty($report->id) && !empty($request->input('user_id')) && $request->input('user_id') == $report->user_id) {

@@ -25,7 +25,7 @@
     {{-- Navbar --}}
     @include('inc.navbar')
 
-    {{-- Dic che contiene tutto il corpo dell'app --}}
+    {{-- Div che contiene tutto il corpo dell'app --}}
     <div id="app">
 
       {{-- Sweet alert --}}

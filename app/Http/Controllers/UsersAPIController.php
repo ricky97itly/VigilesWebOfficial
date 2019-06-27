@@ -108,7 +108,7 @@ class UsersAPIController extends Controller
       // Prendo una singola segnalazione
       $user = User::findOrFail($id);
 
-      // Ritorno la segnalazione appena cancellata come resource
+      // Ritorno la segnalazione appena cancellata come resource, forniscono un modo, semplice e veloce, per manipolare, in fase di serializzazione, l’output prelevato dal nostro database
       if($user->delete()) {
         return new UserResource($user);
       }

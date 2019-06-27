@@ -48,6 +48,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+      /** Creazione campi obbligatori da compilare */
       return Validator::make($data, [
         'name' => ['required', 'string', 'max:255'],
         'surname' => ['required', 'string', 'max:255'],
@@ -66,6 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+      /** Quando crea utente di default è user */
       return User::create([
         'name' => $data['name'],
         'surname' => $data['surname'],

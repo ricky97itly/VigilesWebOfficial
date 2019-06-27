@@ -23,6 +23,7 @@ class ProfileController extends Controller
    */
   public function index()
   {
+    // Può andare al profilo se utente
     $user = Auth::user();
     return view('profile')->with('user', $user);
   }
@@ -67,6 +68,7 @@ class ProfileController extends Controller
    */
   public function edit($id)
   {
+    // Per modificare
     $user = Auth::user();
     return view('profile_update')->with('user', $user);
   }

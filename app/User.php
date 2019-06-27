@@ -16,6 +16,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
+     // Campi che si possono compilare e sono visibili
     protected $fillable = [
         'name', 'surname', 'email', 'password', 'address', 'street_number', 'is_admin',
     ];
@@ -25,6 +26,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
+     // Nascosti
     protected $hidden = [
         'password', 'remember_token',
     ];
@@ -41,6 +43,7 @@ class User extends Authenticatable implements MustVerifyEmail
     // Definizione delle relazioni
 
     // UN utente può fare MOLTI reports
+    // Uno a molti
     public function reports() {
       return $this->hasMany('App\Report');
     }
